@@ -1,0 +1,208 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}VaryaCode — Développement web accessible pour les petites structures{% endblock %}
+{% block meta_description %}VaryaCode, développeuse web indépendante en Dordogne. Sites vitrines professionnels à partir de 150 €. Artisans, associations, indépendants.{% endblock %}
+
+{% block body %}
+<div class="pt-16">
+
+    {# ===== SECTION 1 — HERO ===== #}
+    <section class="min-h-[90vh] flex items-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-varya-dark via-varya-dark to-varya-light opacity-50"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20">
+            <div class="max-w-3xl">
+                <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6" data-animate>
+                    Des solutions web simples et accessibles pour les petites structures locales
+                </h1>
+                <p class="text-varya-text-secondary text-lg sm:text-xl leading-relaxed mb-10" data-animate data-animate-delay="100">
+                    Artisans, associations, indépendants&nbsp;: vous méritez une présence en ligne professionnelle, sans complexité ni budget démesuré. Je conçois des sites clairs, solides et pensés pour évoluer avec vous.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4" data-animate data-animate-delay="200">
+                    <a href="{{ path('app_contact') }}#devis" class="btn-primary text-center">Obtenir un devis gratuit</a>
+                    <a href="{{ path('app_offers') }}" class="btn-secondary text-center">Découvrir les offres</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {# ===== SECTION 2 — PROBLÈME / SOLUTION ===== #}
+    <section class="py-20 bg-varya-darker">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-heading text-3xl sm:text-4xl font-bold text-center mb-16" data-animate>
+                Pourquoi c'est si compliqué d'avoir un bon site&nbsp;?
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-varya-dark/50 rounded-xl p-8 border border-white/5" data-animate data-animate-delay="100">
+                    <div class="w-12 h-12 rounded-lg bg-red-500/10 flex items-center justify-center mb-5">
+                        <svg class="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <h3 class="font-heading text-xl font-semibold mb-3">Les agences sont trop chères</h3>
+                    <p class="text-varya-text-secondary">Des devis à 3&nbsp;000, 5&nbsp;000&nbsp;€… pour une simple vitrine. Quand on est une petite structure, ce n'est pas réaliste.</p>
+                </div>
+                <div class="bg-varya-dark/50 rounded-xl p-8 border border-white/5" data-animate data-animate-delay="200">
+                    <div class="w-12 h-12 rounded-lg bg-orange-500/10 flex items-center justify-center mb-5">
+                        <svg class="w-6 h-6 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    </div>
+                    <h3 class="font-heading text-xl font-semibold mb-3">Les outils en ligne sont trop complexes</h3>
+                    <p class="text-varya-text-secondary">Wix, WordPress tout seul, des heures perdues à bidouiller… et un résultat qui ne vous ressemble pas.</p>
+                </div>
+                <div class="bg-varya-dark/50 rounded-xl p-8 border border-white/5" data-animate data-animate-delay="300">
+                    <div class="w-12 h-12 rounded-lg bg-yellow-500/10 flex items-center justify-center mb-5">
+                        <svg class="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    </div>
+                    <h3 class="font-heading text-xl font-semibold mb-3">L'accompagnement humain manque</h3>
+                    <p class="text-varya-text-secondary">Pas d'interlocuteur, pas d'explication, un site livré et puis plus rien.</p>
+                </div>
+            </div>
+            <div class="text-center bg-gradient-to-r from-varya-green/10 to-varya-blue/10 rounded-xl p-8 border border-varya-green/20" data-animate>
+                <p class="font-heading text-xl font-semibold text-varya-green mb-2">VaryaCode, c'est l'inverse.</p>
+                <p class="text-varya-text-secondary">Un tarif clair dès 150&nbsp;€, un site construit par une vraie développeuse, et un accompagnement du début à la fin.</p>
+            </div>
+        </div>
+    </section>
+
+    {# ===== SECTION 3 — OFFRES EN UN COUP D'ŒIL ===== #}
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-heading text-3xl sm:text-4xl font-bold text-center mb-16" data-animate>
+                Une offre pour chaque besoin
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+                <div class="card-hover bg-varya-darker rounded-xl p-6 border border-white/5" data-animate data-animate-delay="100">
+                    <div class="w-3 h-3 rounded-full bg-varya-green mb-4"></div>
+                    <h3 class="font-heading text-lg font-semibold mb-1">Landing Page Express</h3>
+                    <p class="text-varya-green font-heading font-bold text-xl mb-3">150&nbsp;€</p>
+                    <p class="text-varya-text-secondary text-sm">1 page pro, livrée en 3-5 jours. Parfait pour démarrer.</p>
+                </div>
+                <div class="card-hover bg-varya-darker rounded-xl p-6 border border-white/5" data-animate data-animate-delay="200">
+                    <div class="w-3 h-3 rounded-full bg-varya-blue-sky mb-4"></div>
+                    <h3 class="font-heading text-lg font-semibold mb-1">Site Vitrine Essentiel</h3>
+                    <p class="text-varya-blue-sky font-heading font-bold text-xl mb-3">à partir de 600&nbsp;€</p>
+                    <p class="text-varya-text-secondary text-sm">3-5 pages + CMS. Vous gérez vos contenus en autonomie.</p>
+                </div>
+                <div class="card-hover bg-varya-darker rounded-xl p-6 border border-white/5" data-animate data-animate-delay="300">
+                    <div class="w-3 h-3 rounded-full bg-purple-500 mb-4"></div>
+                    <h3 class="font-heading text-lg font-semibold mb-1">Site Association</h3>
+                    <p class="text-purple-400 font-heading font-bold text-xl mb-3">à partir de 1&nbsp;200&nbsp;€</p>
+                    <p class="text-varya-text-secondary text-sm">Jusqu'à 10 pages, actualités, adhésions. Formation incluse.</p>
+                </div>
+                <div class="card-hover bg-varya-darker rounded-xl p-6 border border-white/5" data-animate data-animate-delay="400">
+                    <div class="w-3 h-3 rounded-full bg-varya-blue mb-4"></div>
+                    <h3 class="font-heading text-lg font-semibold mb-1">Application Symfony</h3>
+                    <p class="text-varya-blue font-heading font-bold text-xl mb-3">sur devis</p>
+                    <p class="text-varya-text-secondary text-sm">Sur mesure, pour les besoins qui dépassent la simple vitrine.</p>
+                </div>
+            </div>
+            <div class="text-center" data-animate>
+                <a href="{{ path('app_offers') }}" class="text-varya-green hover:text-varya-blue-sky transition-colors font-medium">
+                    Voir le détail des offres &rarr;
+                </a>
+            </div>
+        </div>
+    </section>
+
+    {# ===== SECTION 4 — PROJET RÉFÉRENCE ===== #}
+    <section class="py-20 bg-varya-darker">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-heading text-3xl sm:text-4xl font-bold text-center mb-16" data-animate>
+                Un projet, un exemple concret
+            </h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="bg-varya-dark rounded-xl p-8 border border-white/5" data-animate>
+                    <div class="aspect-video bg-varya-light rounded-lg flex items-center justify-center">
+                        <span class="text-varya-text-secondary text-sm">Capture d'écran LUSgem</span>
+                    </div>
+                </div>
+                <div data-animate data-animate-delay="100">
+                    <span class="inline-block px-3 py-1 rounded-full bg-purple-500/20 text-purple-400 text-xs font-medium mb-4">Projet client</span>
+                    <h3 class="font-heading text-2xl font-bold mb-4">Les Univers Singuliers (LUSgem)</h3>
+                    <p class="text-varya-text-secondary mb-4">
+                        Site institutionnel complet développé sous Symfony 7 pour une structure associative locale.
+                    </p>
+                    <p class="text-varya-text-secondary mb-6">
+                        Architecture backend structurée, design sobre, interface d'administration sur mesure. Un projet livré, fonctionnel et pensé pour durer.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 rounded-full bg-varya-light text-varya-text-secondary text-xs">Symfony 7</span>
+                        <span class="px-3 py-1 rounded-full bg-varya-light text-varya-text-secondary text-xs">Twig</span>
+                        <span class="px-3 py-1 rounded-full bg-varya-light text-varya-text-secondary text-xs">Doctrine</span>
+                        <span class="px-3 py-1 rounded-full bg-varya-light text-varya-text-secondary text-xs">MariaDB</span>
+                    </div>
+                    <a href="{{ path('app_portfolio') }}" class="text-varya-green hover:text-varya-blue-sky transition-colors font-medium">
+                        Voir toutes les réalisations &rarr;
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {# ===== SECTION 5 — TÉMOIGNAGE ===== #}
+    {% if testimonials is defined and testimonials|length > 0 %}
+    <section class="py-20 bg-varya-light/30">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-animate>
+            <svg class="w-12 h-12 text-varya-green/30 mx-auto mb-6" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+            {% for testimonial in testimonials %}
+            <blockquote class="text-xl sm:text-2xl text-white leading-relaxed mb-6">
+                {{ testimonial.quote }}
+            </blockquote>
+            <p class="text-varya-text-secondary">
+                <span class="font-semibold text-white">{{ testimonial.name }}</span>
+                {% if testimonial.role %}, {{ testimonial.role }}{% endif %}
+                {% if testimonial.structure %}, {{ testimonial.structure }}{% endif %}
+            </p>
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+
+    {# ===== SECTION 6 — FAQ RAPIDE ===== #}
+    <section class="py-20">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-heading text-3xl sm:text-4xl font-bold text-center mb-12" data-animate>
+                Questions fréquentes
+            </h2>
+            <div class="space-y-4" data-animate data-animate-delay="100">
+                <div class="bg-varya-darker rounded-xl border border-white/5 overflow-hidden">
+                    <button data-accordion-toggle class="w-full flex items-center justify-between p-6 text-left">
+                        <span class="font-heading font-semibold text-lg">Combien coûte un site web&nbsp;?</span>
+                        <svg data-accordion-icon class="w-5 h-5 text-varya-text-secondary flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="hidden px-6 pb-6 text-varya-text-secondary">
+                        Ça dépend du projet. Ma formule la plus accessible commence à 150&nbsp;€ pour une landing page professionnelle. Un site vitrine complet démarre à 600&nbsp;€. Et si vous ne savez pas ce qu'il vous faut, mon questionnaire en ligne vous oriente en 2 minutes.
+                    </div>
+                </div>
+                <div class="bg-varya-darker rounded-xl border border-white/5 overflow-hidden">
+                    <button data-accordion-toggle class="w-full flex items-center justify-between p-6 text-left">
+                        <span class="font-heading font-semibold text-lg">Combien de temps faut-il pour avoir mon site&nbsp;?</span>
+                        <svg data-accordion-icon class="w-5 h-5 text-varya-text-secondary flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="hidden px-6 pb-6 text-varya-text-secondary">
+                        Une landing page est livrée en 3 à 5 jours. Un site vitrine en 2 à 3 semaines. Un site association en 3 à 5 semaines. Pour les projets sur mesure, on définit le planning ensemble.
+                    </div>
+                </div>
+                <div class="bg-varya-darker rounded-xl border border-white/5 overflow-hidden">
+                    <button data-accordion-toggle class="w-full flex items-center justify-between p-6 text-left">
+                        <span class="font-heading font-semibold text-lg">Je n'y connais rien en technique, c'est un problème&nbsp;?</span>
+                        <svg data-accordion-icon class="w-5 h-5 text-varya-text-secondary flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="hidden px-6 pb-6 text-varya-text-secondary">
+                        Pas du tout — c'est même la majorité de mes clients. Je m'occupe de toute la partie technique. Vous, vous me décrivez votre activité et vos besoins. Pas de jargon, pas de prise de tête.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {# ===== SECTION 7 — CTA FINAL ===== #}
+    <section class="py-20 bg-varya-darker">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-animate>
+            <h2 class="font-heading text-3xl sm:text-4xl font-bold mb-6">Prêt(e) à exister en ligne&nbsp;?</h2>
+            <p class="text-varya-text-secondary text-lg mb-10">
+                Décrivez votre projet en quelques clics. Je vous recontacte sous 48h avec une proposition adaptée.
+            </p>
+            <a href="{{ path('app_contact') }}#devis" class="btn-primary">Lancer mon projet</a>
+        </div>
+    </section>
+
+</div>
+{% endblock %}

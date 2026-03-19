@@ -1,0 +1,84 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Portfolio — VaryaCode{% endblock %}
+{% block meta_description %}Découvrez les réalisations VaryaCode : sites vitrines, applications Symfony, projets associatifs. Du concret, du fonctionnel.{% endblock %}
+
+{% block body %}
+<div class="pt-16">
+
+    {# ===== INTRODUCTION ===== #}
+    <section class="py-20">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="font-heading text-4xl sm:text-5xl font-bold mb-6" data-animate>Ce que j'ai déjà construit</h1>
+            <p class="text-varya-text-secondary text-lg leading-relaxed" data-animate data-animate-delay="100">
+                Chaque projet ici reflète ma manière de travailler&nbsp;: des bases solides, une structure claire, et un résultat pensé pour durer. Certains sont des projets clients, d'autres des outils personnels ou des démonstrations — tous sont de vrais projets fonctionnels.
+            </p>
+        </div>
+    </section>
+
+    {# ===== GRILLE DE PROJETS ===== #}
+    <section class="py-10 bg-varya-darker">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {% for project in projects %}
+                <div class="card-hover bg-varya-dark rounded-xl overflow-hidden border border-white/5" data-animate data-animate-delay="{{ loop.index * 100 }}">
+                    {# Image #}
+                    <div class="aspect-video bg-varya-light flex items-center justify-center relative">
+                        {% if project.imageFilename %}
+                            <img src="{{ asset('uploads/projects/' ~ project.imageFilename) }}" alt="{{ project.title }}" class="w-full h-full object-cover">
+                        {% else %}
+                            <span class="text-varya-text-secondary text-sm">{{ project.title }}</span>
+                        {% endif %}
+                        {# Badge catégorie #}
+                        {% set categoryColors = {
+                            'client': 'bg-purple-500/20 text-purple-400',
+                            'personal': 'bg-varya-blue-sky/20 text-varya-blue-sky',
+                            'demo': 'bg-varya-green/20 text-varya-green'
+                        } %}
+                        <span class="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-medium {{ categoryColors[project.projectCategory] ?? 'bg-white/10 text-white' }}">
+                            {{ project.categoryLabel }}
+                        </span>
+                    </div>
+
+                    {# Contenu #}
+                    <div class="p-6">
+                        <h3 class="font-heading text-xl font-bold mb-2">{{ project.title }}</h3>
+                        <p class="text-varya-text-secondary text-sm mb-4">{{ project.shortDescription }}</p>
+
+                        {# Technologies #}
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            {% for tech in project.technologies %}
+                            <span class="px-2 py-1 rounded bg-varya-light text-varya-text-secondary text-xs">{{ tech }}</span>
+                            {% endfor %}
+                        </div>
+
+                        {# Lien externe #}
+                        {% if project.externalUrl %}
+                        <a href="{{ project.externalUrl }}" target="_blank" rel="noopener" class="text-varya-green hover:text-varya-blue-sky transition-colors text-sm font-medium">
+                            Voir le site &rarr;
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+                {% else %}
+                <div class="col-span-full text-center py-20 text-varya-text-secondary">
+                    <p>Les projets seront bientôt disponibles.</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    {# ===== CTA ===== #}
+    <section class="py-20">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-animate>
+            <h2 class="font-heading text-3xl sm:text-4xl font-bold mb-6">Votre projet pourrait être le prochain.</h2>
+            <p class="text-varya-text-secondary text-lg mb-10">
+                Que ce soit une simple page ou un outil complet, parlons-en. Je vous recontacte sous 48h.
+            </p>
+            <a href="{{ path('app_contact') }}#devis" class="btn-primary">Décrivez votre projet</a>
+        </div>
+    </section>
+
+</div>
+{% endblock %}

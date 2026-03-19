@@ -1,0 +1,60 @@
+<h2>Nouvelle demande de devis</h2>
+
+<table style="border-collapse: collapse; width: 100%; max-width: 600px;">
+    <tr>
+        <td style="padding: 8px; border-bottom: 1px solid #eee; font-weight: bold;">Nom</td>
+        <td style="padding: 8px; border-bottom: 1px solid #eee;">{{ devis.contactName }}</td>
+    </tr>
+    <tr>
+        <td style="padding: 8px; border-bottom: 1px solid #eee; font-weight: bold;">Email</td>
+        <td style="padding: 8px; border-bottom: 1px solid #eee;">{{ devis.contactEmail }}</td>
+    </tr>
+    {% if devis.contactPhone %}
+    <tr>
+        <td style="padding: 8px; border-bottom: 1px solid #eee; font-weight: bold;">Téléphone</td>
+        <td style="padding: 8px; border-bottom: 1px solid #eee;">{{ devis.contactPhone }}</td>
+    </tr>
+    {% endif %}
+    <tr>
+        <td style="padding: 8px; border-bottom: 1px solid #eee; font-weight: bold;">Type de structure</td>
+        <td style="padding: 8px; border-bottom: 1px solid #eee;">{{ devis.structureType }}</td>
+    </tr>
+    <tr>
+        <td style="padding: 8px; border-bottom: 1px solid #eee; font-weight: bold;">Site existant</td>
+        <td style="padding: 8px; border-bottom: 1px solid #eee;">{{ devis.hasExistingSite ? 'Oui' : 'Non' }}</td>
+    </tr>
+    <tr>
+        <td style="padding: 8px; border-bottom: 1px solid #eee; font-weight: bold;">Objectif</td>
+        <td style="padding: 8px; border-bottom: 1px solid #eee;">{{ devis.mainObjective }}</td>
+    </tr>
+    <tr>
+        <td style="padding: 8px; border-bottom: 1px solid #eee; font-weight: bold;">Pages estimées</td>
+        <td style="padding: 8px; border-bottom: 1px solid #eee;">{{ devis.estimatedPages }}</td>
+    </tr>
+    <tr>
+        <td style="padding: 8px; border-bottom: 1px solid #eee; font-weight: bold;">Autonomie</td>
+        <td style="padding: 8px; border-bottom: 1px solid #eee;">{{ devis.needsAutonomy }}</td>
+    </tr>
+    <tr>
+        <td style="padding: 8px; border-bottom: 1px solid #eee; font-weight: bold;">Fonctionnalités</td>
+        <td style="padding: 8px; border-bottom: 1px solid #eee;">{{ devis.features|join(', ') }}</td>
+    </tr>
+    <tr>
+        <td style="padding: 8px; border-bottom: 1px solid #eee; font-weight: bold;">Budget</td>
+        <td style="padding: 8px; border-bottom: 1px solid #eee;">{{ devis.budget }}</td>
+    </tr>
+    <tr>
+        <td style="padding: 8px; border-bottom: 1px solid #eee; font-weight: bold;">Délai</td>
+        <td style="padding: 8px; border-bottom: 1px solid #eee;">{{ devis.timeline }}</td>
+    </tr>
+    {% if devis.additionalMessage %}
+    <tr>
+        <td style="padding: 8px; border-bottom: 1px solid #eee; font-weight: bold;">Message</td>
+        <td style="padding: 8px; border-bottom: 1px solid #eee;">{{ devis.additionalMessage }}</td>
+    </tr>
+    {% endif %}
+</table>
+
+<p style="margin-top: 20px; padding: 15px; background: #f0f9ff; border-radius: 8px;">
+    <strong>Offre suggérée :</strong> {{ devis.suggestedOffer }}
+</p>

@@ -1,0 +1,123 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}À propos — VaryaCode{% endblock %}
+{% block meta_description %}Développeuse web indépendante en Dordogne, spécialisée PHP et Symfony. Sites accessibles pour indépendants, artisans et associations.{% endblock %}
+
+{% block body %}
+<div class="pt-16">
+
+    {# ===== HERO ===== #}
+    <section class="py-20">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="font-heading text-4xl sm:text-5xl font-bold mb-6" data-animate>La personne derrière le code</h1>
+            <p class="text-varya-text-secondary text-lg leading-relaxed mb-4" data-animate data-animate-delay="100">
+                Je suis développeuse web indépendante, spécialisée en PHP et Symfony. Ce qui me passionne&nbsp;? La partie qu'on ne voit pas&nbsp;: l'architecture, la logique métier, les fondations qui font qu'un site tient dans le temps.
+            </p>
+            <p class="text-varya-text-secondary text-lg leading-relaxed" data-animate data-animate-delay="200">
+                Un bon site, ce n'est pas juste une belle vitrine. C'est un projet bien pensé, bien construit, et qui peut grandir avec vous.
+            </p>
+        </div>
+    </section>
+
+    {# ===== CE QUE JE FAIS ===== #}
+    <section class="py-20 bg-varya-darker">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div data-animate>
+                <p class="text-varya-text-secondary text-lg leading-relaxed mb-6">
+                    J'accompagne les <span class="text-white font-medium">indépendants</span>, les <span class="text-white font-medium">petites entreprises locales</span> et les <span class="text-white font-medium">associations</span> qui veulent exister en ligne — sans jargon, sans usine à gaz, sans budget démesuré.
+                </p>
+                <p class="text-varya-text-secondary text-lg leading-relaxed mb-6">
+                    <span class="text-white font-medium">Mon point de départ&nbsp;: la Landing Page Express à 150&nbsp;€.</span> Une page web professionnelle, claire et responsive, livrée en 3 à 5 jours. C'est souvent tout ce qu'il faut pour démarrer&nbsp;: présenter son activité, être trouvable en ligne et donner une première impression solide. Pas besoin de plus pour commencer — et si votre projet grandit, votre site peut grandir avec lui.
+                </p>
+                <p class="text-lg">
+                    Mon approche tient en trois mots&nbsp;: <span class="text-varya-green font-semibold">commencer simple</span>, <span class="text-varya-blue-sky font-semibold">construire solide</span>, <span class="text-varya-blue font-semibold">évoluer intelligemment</span>.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    {# ===== MES OUTILS ===== #}
+    <section class="py-20">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-heading text-3xl font-bold text-center mb-4" data-animate>Mes outils</h2>
+            <p class="text-varya-text-secondary text-center mb-12" data-animate data-animate-delay="100">
+                Un socle technique choisi pour sa fiabilité et sa souplesse.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-varya-darker rounded-xl p-8 border border-white/5 text-center" data-animate data-animate-delay="100">
+                    <div class="w-12 h-12 rounded-lg bg-varya-green/10 flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-varya-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                    </div>
+                    <h3 class="font-heading text-lg font-semibold mb-3">Le c&oelig;ur</h3>
+                    <div class="flex flex-wrap justify-center gap-2">
+                        <span class="px-3 py-1 rounded-full bg-varya-light text-varya-text-secondary text-sm">PHP</span>
+                        <span class="px-3 py-1 rounded-full bg-varya-light text-varya-text-secondary text-sm">Symfony</span>
+                        <span class="px-3 py-1 rounded-full bg-varya-light text-varya-text-secondary text-sm">Doctrine</span>
+                        <span class="px-3 py-1 rounded-full bg-varya-light text-varya-text-secondary text-sm">MariaDB</span>
+                    </div>
+                </div>
+                <div class="bg-varya-darker rounded-xl p-8 border border-white/5 text-center" data-animate data-animate-delay="200">
+                    <div class="w-12 h-12 rounded-lg bg-varya-blue-sky/10 flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-varya-blue-sky" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>
+                    </div>
+                    <h3 class="font-heading text-lg font-semibold mb-3">L'interface</h3>
+                    <div class="flex flex-wrap justify-center gap-2">
+                        <span class="px-3 py-1 rounded-full bg-varya-light text-varya-text-secondary text-sm">Twig</span>
+                        <span class="px-3 py-1 rounded-full bg-varya-light text-varya-text-secondary text-sm">Tailwind CSS</span>
+                        <span class="px-3 py-1 rounded-full bg-varya-light text-varya-text-secondary text-sm">HTML/CSS</span>
+                        <span class="px-3 py-1 rounded-full bg-varya-light text-varya-text-secondary text-sm">React</span>
+                    </div>
+                </div>
+                <div class="bg-varya-darker rounded-xl p-8 border border-white/5 text-center" data-animate data-animate-delay="300">
+                    <div class="w-12 h-12 rounded-lg bg-varya-blue/10 flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-varya-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    </div>
+                    <h3 class="font-heading text-lg font-semibold mb-3">L'environnement</h3>
+                    <div class="flex flex-wrap justify-center gap-2">
+                        <span class="px-3 py-1 rounded-full bg-varya-light text-varya-text-secondary text-sm">Docker</span>
+                        <span class="px-3 py-1 rounded-full bg-varya-light text-varya-text-secondary text-sm">Git</span>
+                        <span class="px-3 py-1 rounded-full bg-varya-light text-varya-text-secondary text-sm">VS Code</span>
+                    </div>
+                </div>
+            </div>
+            <p class="text-varya-text-secondary text-center text-sm mt-8" data-animate>
+                Pas d'accumulation de logos pour impressionner&nbsp;: chaque outil est là parce qu'il sert le projet.
+            </p>
+        </div>
+    </section>
+
+    {# ===== VALEURS ===== #}
+    <section class="py-20 bg-varya-darker">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-heading text-3xl font-bold text-center mb-12" data-animate>Ce qui guide VaryaCode</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                {% set values = [
+                    { icon: '🌐', title: 'Accessibilité', desc: 'Le web pro ne devrait pas être réservé aux grosses structures.' },
+                    { icon: '🤝', title: 'Proximité', desc: 'Une vraie écoute, une relation directe, zéro écran de fumée.' },
+                    { icon: '💡', title: 'Clarté', desc: 'Chaque étape expliquée, chaque choix justifié.' },
+                    { icon: '⚙️', title: 'Rigueur', desc: 'Du code propre, structuré, maintenable.' },
+                    { icon: '📈', title: 'Progressivité', desc: "Un projet pertinent aujourd'hui, évolutif demain." }
+                ] %}
+                {% for value in values %}
+                <div class="bg-varya-dark rounded-xl p-6 border border-white/5 text-center" data-animate data-animate-delay="{{ loop.index * 100 }}">
+                    <div class="text-3xl mb-3">{{ value.icon }}</div>
+                    <h3 class="font-heading font-semibold mb-2">{{ value.title }}</h3>
+                    <p class="text-varya-text-secondary text-sm">{{ value.desc }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    {# ===== ET APRÈS ===== #}
+    <section class="py-20">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-animate>
+            <h2 class="font-heading text-3xl font-bold mb-6">Et après&nbsp;?</h2>
+            <p class="text-varya-text-secondary text-lg">
+                2026, c'est la première étape&nbsp;: des prestations accessibles, un accompagnement humain, des projets bien faits. La suite se construit avec les retours du terrain — pas dans une feuille de route figée.
+            </p>
+        </div>
+    </section>
+
+</div>
+{% endblock %}

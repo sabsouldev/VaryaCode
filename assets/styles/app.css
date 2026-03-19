@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Scroll animations */
+[data-animate] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+[data-animate="fade-in"] {
+    transform: translateY(0);
+}
+
+[data-animate].animate-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered delays */
+[data-animate-delay="100"] { transition-delay: 0.1s; }
+[data-animate-delay="200"] { transition-delay: 0.2s; }
+[data-animate-delay="300"] { transition-delay: 0.3s; }
+[data-animate-delay="400"] { transition-delay: 0.4s; }
+
+/* CTA button glow effect */
+.btn-primary {
+    @apply inline-block px-8 py-4 rounded-lg font-heading font-semibold text-white text-lg;
+    background: linear-gradient(135deg, #5CFFA0, #3366CC);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #4DE88E, #2B57B3);
+    box-shadow: 0 0 30px rgba(92, 255, 160, 0.3), 0 0 60px rgba(51, 102, 204, 0.15);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    @apply inline-block px-8 py-4 rounded-lg font-heading font-semibold text-white text-lg border-2 border-varya-text-secondary;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    @apply border-varya-green text-varya-green;
+    box-shadow: 0 0 20px rgba(92, 255, 160, 0.15);
+}
+
+/* Card hover effect */
+.card-hover {
+    transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 0 30px rgba(92, 255, 160, 0.1), 0 0 60px rgba(51, 102, 204, 0.08);
+}
+
+/* Accordion icon transition */
+[data-accordion-icon] {
+    transition: transform 0.3s ease;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Selection color */
+::selection {
+    background-color: rgba(92, 255, 160, 0.3);
+    color: #ffffff;
+}

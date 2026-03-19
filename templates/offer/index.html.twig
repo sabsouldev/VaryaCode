@@ -1,0 +1,152 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Offres & Services — VaryaCode{% endblock %}
+{% block meta_description %}Découvrez les offres VaryaCode : landing page dès 150 €, site vitrine, site association, application Symfony sur mesure.{% endblock %}
+
+{% block body %}
+<div class="pt-16">
+
+    {# ===== INTRODUCTION ===== #}
+    <section class="py-20">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="font-heading text-4xl sm:text-5xl font-bold mb-6" data-animate>Des offres pensées pour vous</h1>
+            <p class="text-varya-text-secondary text-lg leading-relaxed" data-animate data-animate-delay="100">
+                Chaque projet est différent — et c'est normal. Que vous ayez besoin d'une simple page pour démarrer ou d'un outil complet sur mesure, il y a une formule adaptée à votre situation.
+            </p>
+            <p class="text-varya-text-secondary text-lg mt-4" data-animate data-animate-delay="200">
+                Pas de surprise&nbsp;: des tarifs clairs, un périmètre défini, et toujours la possibilité de faire évoluer votre site avec votre activité.
+            </p>
+        </div>
+    </section>
+
+    {# ===== 4 OFFRES ===== #}
+    <section class="py-10 bg-varya-darker">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+                {# Landing Page Express #}
+                <div class="card-hover bg-varya-dark rounded-xl p-8 border border-varya-green/20 relative overflow-hidden" data-animate>
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-varya-green to-varya-green/50"></div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-4 h-4 rounded-full bg-varya-green"></div>
+                        <h3 class="font-heading text-2xl font-bold">Landing Page Express</h3>
+                    </div>
+                    <p class="text-varya-green font-heading font-bold text-3xl mb-2">150&nbsp;€</p>
+                    <p class="text-varya-text-secondary italic mb-6">Votre première présence en ligne, en quelques jours.</p>
+                    <p class="text-varya-text-secondary mb-6">Une page web unique, professionnelle et responsive. Idéale pour tester une activité, annoncer un événement ou simplement exister en ligne avec quelque chose de propre.</p>
+                    <h4 class="font-heading font-semibold mb-3">Ce qui est inclus&nbsp;:</h4>
+                    <ul class="space-y-2 text-varya-text-secondary mb-6">
+                        <li class="flex items-start gap-2"><span class="text-varya-green mt-1">&#10003;</span> 1 page HTML/CSS statique, design soigné</li>
+                        <li class="flex items-start gap-2"><span class="text-varya-green mt-1">&#10003;</span> Responsive mobile et desktop</li>
+                        <li class="flex items-start gap-2"><span class="text-varya-green mt-1">&#10003;</span> Sections : accroche, présentation, contact</li>
+                        <li class="flex items-start gap-2"><span class="text-varya-green mt-1">&#10003;</span> Livraison en 3 à 5 jours</li>
+                        <li class="flex items-start gap-2"><span class="text-varya-green mt-1">&#10003;</span> 1 révision incluse</li>
+                    </ul>
+                    <p class="text-sm text-varya-text-secondary italic">Idéal si vous êtes&nbsp;: auto-entrepreneur qui démarre, micro-association, organisateur d'événement ponctuel.</p>
+                </div>
+
+                {# Site Vitrine Essentiel #}
+                <div class="card-hover bg-varya-dark rounded-xl p-8 border border-varya-blue-sky/20 relative overflow-hidden" data-animate data-animate-delay="100">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-varya-blue-sky to-varya-blue-sky/50"></div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-4 h-4 rounded-full bg-varya-blue-sky"></div>
+                        <h3 class="font-heading text-2xl font-bold">Site Vitrine Essentiel</h3>
+                    </div>
+                    <p class="text-varya-blue-sky font-heading font-bold text-3xl mb-2">à partir de 600&nbsp;€</p>
+                    <p class="text-varya-text-secondary italic mb-6">Un vrai site, que vous pouvez faire vivre vous-même.</p>
+                    <p class="text-varya-text-secondary mb-6">Plusieurs pages, un CMS simple pour modifier vos textes en autonomie, et un formulaire de contact fonctionnel. Le tout optimisé pour être trouvé sur Google.</p>
+                    <h4 class="font-heading font-semibold mb-3">Ce qui est inclus&nbsp;:</h4>
+                    <ul class="space-y-2 text-varya-text-secondary mb-6">
+                        <li class="flex items-start gap-2"><span class="text-varya-blue-sky mt-1">&#10003;</span> 3 à 5 pages avec CMS</li>
+                        <li class="flex items-start gap-2"><span class="text-varya-blue-sky mt-1">&#10003;</span> Modification des textes en autonomie</li>
+                        <li class="flex items-start gap-2"><span class="text-varya-blue-sky mt-1">&#10003;</span> Formulaire de contact fonctionnel</li>
+                        <li class="flex items-start gap-2"><span class="text-varya-blue-sky mt-1">&#10003;</span> Référencement de base (SEO) et responsive</li>
+                        <li class="flex items-start gap-2"><span class="text-varya-blue-sky mt-1">&#10003;</span> Livraison en 2 à 3 semaines</li>
+                    </ul>
+                    <p class="text-sm text-varya-text-secondary italic">Idéal si vous êtes&nbsp;: artisan, thérapeute, praticien bien-être, indépendant avec activité établie.</p>
+                </div>
+
+                {# Site Association #}
+                <div class="card-hover bg-varya-dark rounded-xl p-8 border border-purple-500/20 relative overflow-hidden" data-animate data-animate-delay="200">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-purple-500/50"></div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-4 h-4 rounded-full bg-purple-500"></div>
+                        <h3 class="font-heading text-2xl font-bold">Site Association / Structuré</h3>
+                    </div>
+                    <p class="text-purple-400 font-heading font-bold text-3xl mb-2">à partir de 1&nbsp;200&nbsp;€</p>
+                    <p class="text-varya-text-secondary italic mb-6">Un site complet pour une structure qui vit et communique.</p>
+                    <p class="text-varya-text-secondary mb-6">Pensé pour les associations et collectifs qui ont besoin de plus qu'une vitrine&nbsp;: actualités, adhésions, événements. Avec une formation incluse pour que vous soyez autonomes.</p>
+                    <h4 class="font-heading font-semibold mb-3">Ce qui est inclus&nbsp;:</h4>
+                    <ul class="space-y-2 text-varya-text-secondary mb-6">
+                        <li class="flex items-start gap-2"><span class="text-purple-400 mt-1">&#10003;</span> 6 à 10 pages</li>
+                        <li class="flex items-start gap-2"><span class="text-purple-400 mt-1">&#10003;</span> Espace actualités / blog</li>
+                        <li class="flex items-start gap-2"><span class="text-purple-400 mt-1">&#10003;</span> Formulaire d'adhésion ou d'inscription</li>
+                        <li class="flex items-start gap-2"><span class="text-purple-400 mt-1">&#10003;</span> Formation incluse pour la prise en main</li>
+                        <li class="flex items-start gap-2"><span class="text-purple-400 mt-1">&#10003;</span> Livraison en 3 à 5 semaines</li>
+                    </ul>
+                    <p class="text-sm text-varya-text-secondary italic">Idéal si vous êtes&nbsp;: association loi 1901, collectif local, structure culturelle ou sociale.</p>
+                </div>
+
+                {# Application Symfony #}
+                <div class="card-hover bg-varya-dark rounded-xl p-8 border border-varya-blue/20 relative overflow-hidden" data-animate data-animate-delay="300">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-varya-blue to-varya-blue/50"></div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-4 h-4 rounded-full bg-varya-blue"></div>
+                        <h3 class="font-heading text-2xl font-bold">Application Web Symfony</h3>
+                    </div>
+                    <p class="text-varya-blue font-heading font-bold text-3xl mb-2">sur devis <span class="text-lg font-normal text-varya-text-secondary">(à partir de 2&nbsp;500&nbsp;€)</span></p>
+                    <p class="text-varya-text-secondary italic mb-6">Quand votre besoin dépasse un simple site.</p>
+                    <p class="text-varya-text-secondary mb-6">Vous avez besoin de gérer des données, d'automatiser un processus, de créer un espace membre ou un outil interne&nbsp;? C'est ici que le développement sur mesure prend tout son sens.</p>
+                    <h4 class="font-heading font-semibold mb-3">Ce qui est inclus&nbsp;:</h4>
+                    <ul class="space-y-2 text-varya-text-secondary mb-6">
+                        <li class="flex items-start gap-2"><span class="text-varya-blue mt-1">&#10003;</span> Architecture backend Symfony, propre et évolutive</li>
+                        <li class="flex items-start gap-2"><span class="text-varya-blue mt-1">&#10003;</span> Logique métier adaptée à votre fonctionnement</li>
+                        <li class="flex items-start gap-2"><span class="text-varya-blue mt-1">&#10003;</span> Base de données, authentification, API si nécessaire</li>
+                        <li class="flex items-start gap-2"><span class="text-varya-blue mt-1">&#10003;</span> Devis personnalisé après échange</li>
+                    </ul>
+                    <p class="text-sm text-varya-text-secondary italic">Idéal si vous êtes&nbsp;: structure avec besoin spécifique (gestion de stocks, prise de rdv, suivi d'activité…).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {# ===== MAINTENANCE ===== #}
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-heading text-3xl sm:text-4xl font-bold text-center mb-6" data-animate>Et après la livraison&nbsp;?</h2>
+            <p class="text-varya-text-secondary text-center max-w-2xl mx-auto mb-12" data-animate data-animate-delay="100">
+                Un site, ça vit. Mises à jour de sécurité, petites modifications, évolutions&nbsp;: je propose trois formules d'accompagnement pour que votre site reste fiable dans le temps.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-varya-darker rounded-xl p-8 border border-white/5 text-center" data-animate data-animate-delay="100">
+                    <h3 class="font-heading text-xl font-bold mb-2">Sécurité</h3>
+                    <p class="text-varya-green font-heading font-bold text-2xl mb-4">49&nbsp;€<span class="text-sm font-normal text-varya-text-secondary">/mois</span></p>
+                    <p class="text-varya-text-secondary text-sm">Mises à jour, sauvegardes, monitoring. L'essentiel pour dormir tranquille.</p>
+                </div>
+                <div class="bg-varya-darker rounded-xl p-8 border border-varya-green/20 text-center relative" data-animate data-animate-delay="200">
+                    <h3 class="font-heading text-xl font-bold mb-2">Sérénité</h3>
+                    <p class="text-varya-green font-heading font-bold text-2xl mb-4">89&nbsp;€<span class="text-sm font-normal text-varya-text-secondary">/mois</span></p>
+                    <p class="text-varya-text-secondary text-sm">Tout ce qui précède + 1h de modifications par mois + rapport mensuel.</p>
+                </div>
+                <div class="bg-varya-darker rounded-xl p-8 border border-white/5 text-center" data-animate data-animate-delay="300">
+                    <h3 class="font-heading text-xl font-bold mb-2">Partenaire</h3>
+                    <p class="text-varya-green font-heading font-bold text-2xl mb-4">149&nbsp;€<span class="text-sm font-normal text-varya-text-secondary">/mois</span></p>
+                    <p class="text-varya-text-secondary text-sm">Tout ce qui précède + 3h de modifications + intervention prioritaire. Pour ceux qui veulent un vrai binôme technique.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {# ===== CTA ===== #}
+    <section class="py-20 bg-varya-darker">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-animate>
+            <h2 class="font-heading text-3xl sm:text-4xl font-bold mb-6">Pas sûr(e) de ce qu'il vous faut&nbsp;?</h2>
+            <p class="text-varya-text-secondary text-lg mb-10">
+                C'est normal — et c'est pour ça que j'ai créé un petit questionnaire. En quelques questions, il vous oriente vers l'offre la plus adaptée à votre situation. Aucun engagement, juste de la clarté.
+            </p>
+            <a href="{{ path('app_contact') }}#devis" class="btn-primary">Répondre au questionnaire (2 minutes)</a>
+        </div>
+    </section>
+
+</div>
+{% endblock %}
