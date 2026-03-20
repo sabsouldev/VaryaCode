@@ -36,8 +36,9 @@
         <div class="border-t border-white/5 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-varya-text-secondary">
             <p>&copy; {{ "now"|date("Y") }} VaryaCode</p>
             <div class="flex space-x-4 mt-2 sm:mt-0">
-                <a href="#" class="hover:text-varya-green transition-colors">Mentions légales</a>
-                <a href="#" class="hover:text-varya-green transition-colors">Politique de confidentialité</a>
+                <a href="{{ path('app_mentions_legales') }}" class="hover:text-varya-green transition-colors">Mentions légales</a>
+                <a href="{{ path('app_confidentialite') }}" class="hover:text-varya-green transition-colors">Confidentialité</a>
+                <a href="{{ path('app_cgv') }}" class="hover:text-varya-green transition-colors">CGV</a>
             </div>
         </div>
     </div>
