@@ -3,7 +3,10 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             {# Logo + description #}
             <div>
-                <a href="{{ path('app_home') }}" class="font-heading font-bold text-xl bg-gradient-to-r from-varya-green to-varya-blue bg-clip-text text-transparent">VaryaCode</a>
+                <a href="{{ path('app_home') }}" class="flex items-center space-x-2">
+                    <img src="{{ asset('img/logo-VaryaCode.jpg') }}" alt="VaryaCode" class="h-8 w-8 rounded">
+                    <span class="font-heading font-bold text-xl bg-gradient-to-r from-varya-green to-varya-blue bg-clip-text text-transparent">VaryaCode</span>
+                </a>
                 <p class="mt-3 text-varya-text-secondary text-sm">Développement web accessible pour les petites structures locales.</p>
                 <p class="mt-2 text-varya-text-secondary text-sm">Dordogne, Nouvelle-Aquitaine</p>
             </div>

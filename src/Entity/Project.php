@@ -131,4 +131,15 @@ class Project
             default => 'gray',
         };
     }
+
+    public function getTechnologiesAsString(): string
+    {
+    return implode(', ', $this->technologies);
+    }
+
+    public function setTechnologiesAsString(string $value): static
+    {
+        $this->technologies = array_filter(array_map('trim', explode(',', $value)));
+        return $this;
+    }
 }

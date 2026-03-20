@@ -10,17 +10,22 @@ use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 class AppFixtures extends Fixture
 {
-    public function __construct(private UserPasswordHasherInterface $passwordHasher)
-    {
+    public function __construct(
+        private UserPasswordHasherInterface $passwordHasher,
+        #[\Symfony\Component\DependencyInjection\Attribute\Autowire(env: 'ADMIN_EMAIL')]
+        private string $adminEmail,
+        #[\Symfony\Component\DependencyInjection\Attribute\Autowire(env: 'ADMIN_PASSWORD')]
+        private string $adminPassword,
+    ) {
     }
 
     public function load(ObjectManager $manager): void
     {
         // Admin user
         $admin = new User();
-        $admin->setEmail('admin@varyacode.fr');
+        $admin->setEmail($this->adminEmail);
         $admin->setRoles(['ROLE_ADMIN']);
-        $admin->setPassword($this->passwordHasher->hashPassword($admin, 'admin123'));
+        $admin->setPassword($this->passwordHasher->hashPassword($admin, $this->adminPassword));
         $manager->persist($admin);
 
         // Projects
