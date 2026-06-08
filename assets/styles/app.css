@@ -24,37 +24,43 @@
 [data-animate-delay="300"] { transition-delay: 0.3s; }
 [data-animate-delay="400"] { transition-delay: 0.4s; }
 
-/* CTA button glow effect */
+/* Primary button — gradient blue */
 .btn-primary {
-    @apply inline-block px-8 py-4 rounded-lg font-heading font-semibold text-white text-lg;
-    background: linear-gradient(135deg, #5CFFA0, #3366CC);
+    @apply inline-block px-8 py-4 rounded-xl font-heading font-semibold text-white text-lg;
+    background: linear-gradient(135deg, #0786FF, #039AF3);
     transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
-    background: linear-gradient(135deg, #4DE88E, #2B57B3);
-    box-shadow: 0 0 30px rgba(92, 255, 160, 0.3), 0 0 60px rgba(51, 102, 204, 0.15);
+    background: linear-gradient(135deg, #0A3BFB, #0786FF);
+    box-shadow: 0 0 30px rgba(7, 134, 255, 0.3), 0 0 60px rgba(3, 154, 243, 0.15);
     transform: translateY(-2px);
 }
 
+/* Secondary button — light blue */
 .btn-secondary {
-    @apply inline-block px-8 py-4 rounded-lg font-heading font-semibold text-white text-lg border-2 border-varya-text-secondary;
+    @apply inline-block px-8 py-4 rounded-xl font-heading font-semibold text-lg;
+    background: #F0F7FF;
+    color: #0786FF;
+    border: 1px solid #D0E4FF;
     transition: all 0.3s ease;
 }
 
 .btn-secondary:hover {
-    @apply border-varya-green text-varya-green;
-    box-shadow: 0 0 20px rgba(92, 255, 160, 0.15);
+    background: #E0EFFF;
+    border-color: #0786FF;
+    transform: translateY(-2px);
 }
 
-/* Card hover effect */
-.card-hover {
+/* Card style */
+.card-v2 {
+    @apply bg-white rounded-2xl border border-slate-200 p-6;
     transition: all 0.3s ease;
 }
 
-.card-hover:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 0 30px rgba(92, 255, 160, 0.1), 0 0 60px rgba(51, 102, 204, 0.08);
+.card-v2:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
 }
 
 /* Accordion icon transition */
@@ -69,6 +75,6 @@ html {
 
 /* Selection color */
 ::selection {
-    background-color: rgba(92, 255, 160, 0.3);
-    color: #ffffff;
+    background-color: rgba(78, 235, 168, 0.3);
+    color: #1A1A2E;
 }

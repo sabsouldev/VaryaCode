@@ -11,6 +11,6 @@ class AboutController extends AbstractController
     #[Route('/a-propos', name: 'app_about')]
     public function index(): Response
     {
-        return $this->render('about/index.html.twig');
+        return $this->redirectToRoute('app_home', [], Response::HTTP_MOVED_PERMANENTLY);
     }
 }

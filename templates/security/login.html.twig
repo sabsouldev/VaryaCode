@@ -3,28 +3,28 @@
 {% block title %}Connexion — VaryaCode{% endblock %}
 
 {% block body %}
-<div class="pt-16 min-h-screen flex items-center justify-center">
+<div class="pt-16 min-h-screen flex items-center justify-center bg-slate-950">
     <div class="max-w-md w-full mx-4">
-        <div class="bg-varya-darker rounded-xl p-8 border border-white/5">
-            <h1 class="font-heading text-2xl font-bold text-center mb-8">Connexion</h1>
+       <div style="background-color: #0d0b2e;" class="rounded-2xl p-8 border border-slate-700 shadow-sm">
+            <h1 class="font-heading text-2xl font-bold text-center text-white mb-8">Connexion</h1>
 
             {% if error %}
-            <div class="bg-red-500/10 border border-red-500/20 rounded-lg p-4 mb-6">
-                <p class="text-red-400 text-sm">{{ error.messageKey|trans(error.messageData, 'security') }}</p>
+            <div class="bg-red-50 border border-red-200 rounded-xl p-4 mb-6">
+                <p class="text-red-600 text-sm">{{ error.messageKey|trans(error.messageData, 'security') }}</p>
             </div>
             {% endif %}
 
             <form method="post">
                 <div class="mb-4">
-                    <label for="username" class="block text-sm font-medium mb-2">Email</label>
-                    <input type="email" id="username" name="_username" value="{{ last_username }}" required autofocus class="w-full bg-varya-light border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-varya-green transition-colors">
+                    <label for="username" class="block text-sm font-medium text-white mb-2">Email</label>
+                    <input type="email" id="username" name="_username" value="{{ last_username }}" required autofocus class="w-full border border-slate-300 rounded-xl px-4 py-3 text-vc-text focus:outline-none focus:border-vc-blue focus:ring-1 focus:ring-vc-blue transition-colors">
                 </div>
                 <div class="mb-6">
-                    <label for="password" class="block text-sm font-medium mb-2">Mot de passe</label>
-                    <input type="password" id="password" name="_password" required class="w-full bg-varya-light border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-varya-green transition-colors">
+                    <label for="password" class="block text-sm font-medium text-white mb-2">Mot de passe</label>
+                    <input type="password" id="password" name="_password" required class="w-full border border-slate-300 rounded-xl px-4 py-3 text-vc-text focus:outline-none focus:border-vc-blue focus:ring-1 focus:ring-vc-blue transition-colors">
                 </div>
                 <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-                <button type="submit" class="btn-primary w-full text-center">Se connecter</button>
+                <button type="submit" class="w-full py-3 rounded-xl text-white font-semibold bg-gradient-to-r from-[#0A3BFB] to-[#4EEBA8] hover:opacity-90 transition-opacity">Se connecter</button>
             </form>
         </div>
     </div>

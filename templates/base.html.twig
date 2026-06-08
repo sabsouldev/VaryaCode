@@ -3,8 +3,8 @@
     <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}VaryaCode — Développement web accessible{% endblock %}</title>
-    <meta name="description" content="{% block meta_description %}VaryaCode, développeuse web indépendante en Dordogne. Sites vitrines, applications Symfony, à partir de 150 €.{% endblock %}">
+    <title>{% block title %}VaryaCode — Sites web pour petites structures{% endblock %}</title>
+    <meta name="description" content="{% block meta_description %}VaryaCode, développeuse web en Dordogne. Sites vitrines professionnels dès 35 €/mois pour artisans, associations et indépendants.{% endblock %}">
 
     {# Favicons #}
     <link rel="icon" type="image/x-icon" href="{{ asset('img/favicon.ico') }}">
@@ -15,7 +15,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
     {% block stylesheets %}
         {{ encore_entry_link_tags('app') }}
     {% endblock %}
@@ -23,7 +23,7 @@
         {{ encore_entry_script_tags('app') }}
     {% endblock %}
 </head>
-    <body class="bg-varya-dark text-white font-body antialiased">
+    <body class="bg-vc-bg text-vc-text font-body antialiased">
         {# Navbar #}
         {% include 'components/_navbar.html.twig' %}
 

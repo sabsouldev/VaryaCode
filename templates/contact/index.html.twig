@@ -1,282 +1,63 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Contact — VaryaCode{% endblock %}
-{% block meta_description %}Contactez VaryaCode pour votre projet web. Formulaire de devis intelligent et contact direct. Réponse sous 48h.{% endblock %}
+{% block meta_description %}Contactez VaryaCode pour votre projet web. Réponse sous 48h.{% endblock %}
 
 {% block body %}
 <div class="pt-16">
 
     {# ===== INTRODUCTION ===== #}
-    <section class="py-20">
+    <section class="py-20 bg-vc-bg">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="font-heading text-4xl sm:text-5xl font-bold mb-6" data-animate>Parlons de votre projet</h1>
-            <p class="text-varya-text-secondary text-lg leading-relaxed" data-animate data-animate-delay="100">
-                Vous avez une idée, un besoin, une question&nbsp;? Commencez par le questionnaire ci-dessous&nbsp;: en quelques clics, il vous oriente vers l'offre la plus adaptée. Si vous préférez simplement m'écrire, le formulaire de contact est juste en dessous.
+            <h1 class="font-heading text-4xl sm:text-5xl font-bold text-vc-text mb-6" data-animate>Parlons de votre projet</h1>
+            <p class="text-vc-text-light text-lg leading-relaxed" data-animate data-animate-delay="100">
+                Vous avez une idée, un besoin, une question&nbsp;? Écrivez-moi directement ci-dessous. Je vous recontacte sous 48h.
             </p>
-        </div>
-    </section>
-
-    {# ===== FORMULAIRE DE DEVIS INTELLIGENT ===== #}
-    <section class="py-10 bg-varya-darker" id="devis">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="font-heading text-2xl font-bold text-center mb-2" data-animate>Trouvez l'offre qui vous correspond</h2>
-            <p class="text-varya-text-secondary text-center mb-10" data-animate data-animate-delay="100">
-                Répondez à quelques questions — ça prend 2 minutes. Je vous recontacte sous 48h avec une proposition adaptée.
-            </p>
-
-            {# Barre de progression #}
-            <div class="mb-8" data-animate data-animate-delay="200">
-                <div class="flex justify-between text-sm text-varya-text-secondary mb-2">
-                    <span id="step-label">Étape 1 sur 4</span>
-                    <span id="step-name">Qui êtes-vous ?</span>
-                </div>
-                <div class="w-full bg-varya-light rounded-full h-2">
-                    <div id="progress-bar" class="h-2 rounded-full bg-gradient-to-r from-varya-green to-varya-blue transition-all duration-500" style="width: 25%"></div>
-                </div>
-            </div>
-
-            {# Formulaire multi-étapes #}
-            <div id="devis-form" class="bg-varya-dark rounded-xl p-8 border border-white/5 overflow-hidden relative" data-animate data-animate-delay="300">
-                <form id="devis-form-element" data-action="{{ path('app_devis_submit') }}">
-
-                    {# Étape 1 — Qui êtes-vous ? #}
-                    <div class="devis-step" data-step="1">
-                        <div class="space-y-6">
-                            <div>
-                                <label for="contactName" class="block text-sm font-medium mb-2">Votre nom / structure <span class="text-red-400">*</span></label>
-                                <input type="text" id="contactName" name="contactName" required class="w-full bg-varya-light border border-white/10 rounded-lg px-4 py-3 text-white placeholder-varya-text-secondary focus:outline-none focus:border-varya-green transition-colors" placeholder="Jean Dupont ou Mon Association">
-                            </div>
-                            <div>
-                                <label for="contactEmail" class="block text-sm font-medium mb-2">Email <span class="text-red-400">*</span></label>
-                                <input type="email" id="contactEmail" name="contactEmail" required class="w-full bg-varya-light border border-white/10 rounded-lg px-4 py-3 text-white placeholder-varya-text-secondary focus:outline-none focus:border-varya-green transition-colors" placeholder="votre@email.fr">
-                            </div>
-                            <div>
-                                <label for="contactPhone" class="block text-sm font-medium mb-2">Téléphone <span class="text-varya-text-secondary">(facultatif)</span></label>
-                                <input type="tel" id="contactPhone" name="contactPhone" class="w-full bg-varya-light border border-white/10 rounded-lg px-4 py-3 text-white placeholder-varya-text-secondary focus:outline-none focus:border-varya-green transition-colors" placeholder="06 12 34 56 78">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium mb-3">Vous êtes <span class="text-red-400">*</span></label>
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                    {% set structureTypes = ['Artisan / Indépendant', 'Association loi 1901', 'Thérapeute / Praticien', 'Commerçant local', 'Autre'] %}
-                                    {% for type in structureTypes %}
-                                    <label class="flex items-center gap-3 bg-varya-light rounded-lg px-4 py-3 cursor-pointer border border-white/5 hover:border-varya-green/30 transition-colors">
-                                        <input type="radio" name="structureType" value="{{ type }}" required class="text-varya-green focus:ring-varya-green">
-                                        <span class="text-sm">{{ type }}</span>
-                                    </label>
-                                    {% endfor %}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {# Étape 2 — Votre projet #}
-                    <div class="devis-step hidden" data-step="2">
-                        <div class="space-y-6">
-                            <div>
-                                <label class="block text-sm font-medium mb-3">Avez-vous déjà un site web ? <span class="text-red-400">*</span></label>
-                                <div class="flex gap-4">
-                                    <label class="flex items-center gap-3 bg-varya-light rounded-lg px-6 py-3 cursor-pointer border border-white/5 hover:border-varya-green/30 transition-colors">
-                                        <input type="radio" name="hasExistingSite" value="1" required class="text-varya-green focus:ring-varya-green">
-                                        <span>Oui</span>
-                                    </label>
-                                    <label class="flex items-center gap-3 bg-varya-light rounded-lg px-6 py-3 cursor-pointer border border-white/5 hover:border-varya-green/30 transition-colors">
-                                        <input type="radio" name="hasExistingSite" value="0" required class="text-varya-green focus:ring-varya-green">
-                                        <span>Non</span>
-                                    </label>
-                                </div>
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium mb-3">Quel est votre objectif principal ? <span class="text-red-400">*</span></label>
-                                <div class="space-y-3">
-                                    {% set objectives = {
-                                        'visible': 'Être visible en ligne (présentation simple)',
-                                        'informer': 'Informer et communiquer (actualités, événements)',
-                                        'adhesions': 'Gérer des adhésions ou inscriptions',
-                                        'automatiser': 'Automatiser un processus interne (gestion, suivi, outil métier)',
-                                        'tester': 'Tester une idée / un événement rapidement'
-                                    } %}
-                                    {% for value, label in objectives %}
-                                    <label class="flex items-center gap-3 bg-varya-light rounded-lg px-4 py-3 cursor-pointer border border-white/5 hover:border-varya-green/30 transition-colors">
-                                        <input type="radio" name="mainObjective" value="{{ value }}" required class="text-varya-green focus:ring-varya-green">
-                                        <span class="text-sm">{{ label }}</span>
-                                    </label>
-                                    {% endfor %}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {# Étape 3 — Vos besoins #}
-                    <div class="devis-step hidden" data-step="3">
-                        <div class="space-y-6">
-                            <div>
-                                <label class="block text-sm font-medium mb-3">Combien de pages estimez-vous ? <span class="text-red-400">*</span></label>
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                    {% set pages = {'1_page': '1 seule page', '2_5': '2 à 5 pages', '6_10': '6 à 10 pages', 'plus_10': 'Plus de 10 / Je ne sais pas'} %}
-                                    {% for value, label in pages %}
-                                    <label class="flex items-center gap-3 bg-varya-light rounded-lg px-4 py-3 cursor-pointer border border-white/5 hover:border-varya-green/30 transition-colors">
-                                        <input type="radio" name="estimatedPages" value="{{ value }}" required class="text-varya-green focus:ring-varya-green">
-                                        <span class="text-sm">{{ label }}</span>
-                                    </label>
-                                    {% endfor %}
-                                </div>
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium mb-3">Avez-vous besoin de modifier vos contenus vous-même ?</label>
-                                <div class="flex flex-wrap gap-3">
-                                    {% for val in ['oui', 'non', 'ne_sais_pas'] %}
-                                    <label class="flex items-center gap-3 bg-varya-light rounded-lg px-4 py-3 cursor-pointer border border-white/5 hover:border-varya-green/30 transition-colors">
-                                        <input type="radio" name="needsAutonomy" value="{{ val }}" class="text-varya-green focus:ring-varya-green">
-                                        <span class="text-sm">{{ val == 'oui' ? 'Oui' : (val == 'non' ? 'Non' : 'Je ne sais pas') }}</span>
-                                    </label>
-                                    {% endfor %}
-                                </div>
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium mb-3">Fonctionnalités souhaitées</label>
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                    {% set features = {
-                                        'formulaire_contact': 'Formulaire de contact',
-                                        'actualites': 'Espace actualités / blog',
-                                        'adhesion': 'Formulaire d\'adhésion ou d\'inscription',
-                                        'galerie': 'Galerie photos',
-                                        'carte': 'Carte / localisation',
-                                        'connexion_espace_membre': 'Connexion / espace membre',
-                                        'gestion_donnees': 'Gestion de données spécifiques',
-                                        'autre': 'Autre'
-                                    } %}
-                                    {% for value, label in features %}
-                                    <label class="flex items-center gap-3 bg-varya-light rounded-lg px-4 py-3 cursor-pointer border border-white/5 hover:border-varya-green/30 transition-colors">
-                                        <input type="checkbox" name="features[]" value="{{ value }}" class="rounded text-varya-green focus:ring-varya-green">
-                                        <span class="text-sm">{{ label }}</span>
-                                    </label>
-                                    {% endfor %}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {# Étape 4 — Budget et planning #}
-                    <div class="devis-step hidden" data-step="4">
-                        <div class="space-y-6">
-                            <div>
-                                <label class="block text-sm font-medium mb-3">Budget envisagé <span class="text-red-400">*</span></label>
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                    {% set budgets = {
-                                        'moins_200': 'Moins de 200 €',
-                                        '200_600': '200 € - 600 €',
-                                        '600_1500': '600 € - 1 500 €',
-                                        '1500_3000': '1 500 € - 3 000 €',
-                                        'plus_3000': 'Plus de 3 000 €',
-                                        'aucune_idee': 'Aucune idée, je fais confiance'
-                                    } %}
-                                    {% for value, label in budgets %}
-                                    <label class="flex items-center gap-3 bg-varya-light rounded-lg px-4 py-3 cursor-pointer border border-white/5 hover:border-varya-green/30 transition-colors">
-                                        <input type="radio" name="budget" value="{{ value }}" required class="text-varya-green focus:ring-varya-green">
-                                        <span class="text-sm">{{ label }}</span>
-                                    </label>
-                                    {% endfor %}
-                                </div>
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium mb-3">Délai souhaité <span class="text-red-400">*</span></label>
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                    {% set timelines = {'urgent': 'Urgent (< 1 semaine)', '2_3_semaines': '2-3 semaines', '1_2_mois': '1-2 mois', 'pas_presse': 'Pas pressé'} %}
-                                    {% for value, label in timelines %}
-                                    <label class="flex items-center gap-3 bg-varya-light rounded-lg px-4 py-3 cursor-pointer border border-white/5 hover:border-varya-green/30 transition-colors">
-                                        <input type="radio" name="timeline" value="{{ value }}" required class="text-varya-green focus:ring-varya-green">
-                                        <span class="text-sm">{{ label }}</span>
-                                    </label>
-                                    {% endfor %}
-                                </div>
-                            </div>
-                            <div>
-                                <label for="additionalMessage" class="block text-sm font-medium mb-2">Message complémentaire <span class="text-varya-text-secondary">(optionnel)</span></label>
-                                <textarea id="additionalMessage" name="additionalMessage" rows="4" class="w-full bg-varya-light border border-white/10 rounded-lg px-4 py-3 text-white placeholder-varya-text-secondary focus:outline-none focus:border-varya-green transition-colors" placeholder="Décrivez votre projet en quelques mots..."></textarea>
-                            </div>
-                        </div>
-                    </div>
-
-                    {# Résultat #}
-                    <div id="devis-result" class="hidden">
-                        <div class="text-center py-8">
-                            <div class="w-16 h-16 rounded-full bg-varya-green/20 flex items-center justify-center mx-auto mb-6">
-                                <svg class="w-8 h-8 text-varya-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                            </div>
-                            <h3 class="font-heading text-2xl font-bold mb-2">L'offre recommandée pour vous</h3>
-                            <div id="suggested-offer" class="my-6 p-6 bg-varya-light rounded-xl border border-varya-green/20">
-                                {# Rempli par JS #}
-                            </div>
-                            <p class="text-varya-text-secondary mb-6">Cette recommandation est basée sur vos réponses. Je vous recontacte sous 48h pour en discuter&nbsp;!</p>
-                            <div id="devis-summary" class="text-left bg-varya-light/50 rounded-xl p-6 mb-6">
-                                {# Récapitulatif rempli par JS #}
-                            </div>
-                            <button type="button" id="modify-answers" class="text-varya-green hover:text-varya-blue-sky transition-colors font-medium">
-                                Modifier mes réponses
-                            </button>
-                        </div>
-                    </div>
-
-                    {# Boutons navigation #}
-                    <div id="devis-nav" class="flex justify-between mt-8">
-                        <button type="button" id="prev-step" class="hidden px-6 py-3 rounded-lg border border-white/10 text-varya-text-secondary hover:text-white hover:border-white/30 transition-colors">
-                            &larr; Précédent
-                        </button>
-                        <div class="ml-auto">
-                            <button type="button" id="next-step" class="btn-primary !py-3">
-                                Suivant &rarr;
-                            </button>
-                            <button type="submit" id="submit-devis" class="hidden btn-primary !py-3">
-                                Envoyer ma demande
-                            </button>
-                        </div>
-                    </div>
-                </form>
+            <div class="mt-6" data-animate data-animate-delay="200">
+                <a href="{{ path('app_decouvrir') }}" class="text-vc-blue hover:text-vc-blue-royal font-medium transition-colors">Ou découvrez quel plan est fait pour vous &rarr;</a>
             </div>
         </div>
     </section>
 
-    {# ===== INFOS DE CONTACT ===== #}
-    <section class="py-20">
+    {# ===== CONTACT ===== #}
+    <section class="py-16 bg-white">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                {# Infos #}
                 <div data-animate>
-                    <h2 class="font-heading text-2xl font-bold mb-6">Envie d'échanger directement&nbsp;?</h2>
+                    <h2 class="font-heading text-2xl font-bold text-vc-text mb-6">Envie d'échanger directement&nbsp;?</h2>
                     <ul class="space-y-4">
                         <li class="flex items-center gap-3">
-                            <svg class="w-5 h-5 text-varya-green flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                            <a href="mailto:contact@varyacode.fr" class="text-varya-text-secondary hover:text-varya-green transition-colors">contact@varyacode.fr</a>
+                            <svg class="w-5 h-5 text-vc-blue flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            <a href="mailto:contact@varyacode.fr" class="text-vc-text-light hover:text-vc-blue transition-colors">contact@varyacode.fr</a>
                         </li>
                         <li class="flex items-center gap-3">
-                            <svg class="w-5 h-5 text-varya-blue-sky flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                            <span class="text-varya-text-secondary">Basée en Dordogne, Nouvelle-Aquitaine — je travaille avec toute la France en distanciel.</span>
+                            <svg class="w-5 h-5 text-vc-blue-sky flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            <span class="text-vc-text-light">Basée en Dordogne — je travaille avec toute la France.</span>
                         </li>
                     </ul>
                 </div>
 
-                {# ===== FORMULAIRE DE CONTACT SIMPLE ===== #}
+                {# Formulaire #}
                 <div id="contact" data-animate data-animate-delay="100">
-                    <h2 class="font-heading text-2xl font-bold mb-2">Ou écrivez-moi directement</h2>
-                    <p class="text-varya-text-secondary text-sm mb-6">Une question, une demande particulière, un simple bonjour&nbsp;? Ce formulaire est fait pour ça.</p>
-
                     {% if contact_success is defined and contact_success %}
-                    <div class="bg-varya-green/10 border border-varya-green/20 rounded-lg p-4 mb-6">
-                        <p class="text-varya-green font-medium">Merci pour votre message&nbsp;! Je vous réponds sous 48h.</p>
+                    <div class="bg-vc-mint/10 border border-vc-mint/20 rounded-xl p-4 mb-6">
+                        <p class="text-vc-mint font-medium">Merci pour votre message&nbsp;! Je vous réponds sous 48h.</p>
                     </div>
                     {% endif %}
 
                     <form method="post" action="{{ path('app_contact_submit') }}" class="space-y-4">
                         <div>
-                            <label for="contact_name" class="block text-sm font-medium mb-2">Votre nom <span class="text-red-400">*</span></label>
-                            <input type="text" id="contact_name" name="contact_name" required class="w-full bg-varya-light border border-white/10 rounded-lg px-4 py-3 text-white placeholder-varya-text-secondary focus:outline-none focus:border-varya-green transition-colors">
+                            <label for="contact_name" class="block text-sm font-medium text-vc-text mb-2">Votre nom <span class="text-red-500">*</span></label>
+                            <input type="text" id="contact_name" name="contact_name" required class="w-full border border-slate-300 rounded-xl px-4 py-3 text-vc-text placeholder-vc-text-muted focus:outline-none focus:border-vc-blue focus:ring-1 focus:ring-vc-blue transition-colors">
                         </div>
                         <div>
-                            <label for="contact_email" class="block text-sm font-medium mb-2">Votre email <span class="text-red-400">*</span></label>
-                            <input type="email" id="contact_email" name="contact_email" required class="w-full bg-varya-light border border-white/10 rounded-lg px-4 py-3 text-white placeholder-varya-text-secondary focus:outline-none focus:border-varya-green transition-colors">
+                            <label for="contact_email" class="block text-sm font-medium text-vc-text mb-2">Votre email <span class="text-red-500">*</span></label>
+                            <input type="email" id="contact_email" name="contact_email" required class="w-full border border-slate-300 rounded-xl px-4 py-3 text-vc-text placeholder-vc-text-muted focus:outline-none focus:border-vc-blue focus:ring-1 focus:ring-vc-blue transition-colors">
                         </div>
                         <div>
-                            <label for="contact_subject" class="block text-sm font-medium mb-2">Sujet <span class="text-red-400">*</span></label>
-                            <select id="contact_subject" name="contact_subject" required class="w-full bg-varya-light border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-varya-green transition-colors">
+                            <label for="contact_subject" class="block text-sm font-medium text-vc-text mb-2">Sujet <span class="text-red-500">*</span></label>
+                            <select id="contact_subject" name="contact_subject" required class="w-full border border-slate-300 rounded-xl px-4 py-3 text-vc-text focus:outline-none focus:border-vc-blue focus:ring-1 focus:ring-vc-blue transition-colors">
                                 <option value="">Choisissez un sujet</option>
                                 <option value="Question sur une offre">Question sur une offre</option>
                                 <option value="Demande de renseignement">Demande de renseignement</option>
@@ -285,8 +66,8 @@
                             </select>
                         </div>
                         <div>
-                            <label for="contact_message" class="block text-sm font-medium mb-2">Votre message <span class="text-red-400">*</span></label>
-                            <textarea id="contact_message" name="contact_message" required rows="4" class="w-full bg-varya-light border border-white/10 rounded-lg px-4 py-3 text-white placeholder-varya-text-secondary focus:outline-none focus:border-varya-green transition-colors"></textarea>
+                            <label for="contact_message" class="block text-sm font-medium text-vc-text mb-2">Votre message <span class="text-red-500">*</span></label>
+                            <textarea id="contact_message" name="contact_message" required rows="5" class="w-full border border-slate-300 rounded-xl px-4 py-3 text-vc-text placeholder-vc-text-muted focus:outline-none focus:border-vc-blue focus:ring-1 focus:ring-vc-blue transition-colors"></textarea>
                         </div>
                         <button type="submit" class="btn-primary !py-3 w-full text-center">Envoyer</button>
                     </form>
@@ -296,23 +77,22 @@
     </section>
 
     {# ===== FAQ ===== #}
-    <section class="py-20 bg-varya-darker">
+    <section class="py-16 bg-vc-bg">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="font-heading text-2xl font-bold text-center mb-10" data-animate>Avant de me contacter, peut-être que la réponse est ici</h2>
+            <h2 class="font-heading text-2xl font-bold text-center text-vc-text mb-10" data-animate>Questions fréquentes</h2>
             <div class="space-y-4" data-animate data-animate-delay="100">
                 {% set faq = [
-                    { q: 'Est-ce que le questionnaire m\'engage à quelque chose ?', a: 'Non, rien du tout. C\'est un premier échange pour mieux comprendre votre besoin. Vous recevrez une proposition, libre à vous de la suite.' },
                     { q: 'Vous travaillez uniquement en Dordogne ?', a: 'Je suis basée en Dordogne, mais je travaille avec des clients partout en France. Tout se fait en ligne — visio, email, téléphone.' },
                     { q: 'Quel est le délai pour recevoir une réponse ?', a: 'Je m\'engage à vous recontacter sous 48h maximum après réception de votre demande.' },
-                    { q: 'Je ne sais pas du tout ce qu\'il me faut, c\'est grave ?', a: 'Pas du tout, c\'est justement le but du questionnaire. Et si vous préférez en discuter de vive voix, écrivez-moi et on organise un échange.' }
+                    { q: 'Je ne sais pas du tout ce qu\'il me faut, c\'est grave ?', a: 'Pas du tout ! Répondez au questionnaire en 2 minutes ou écrivez-moi, et on en discute ensemble.' }
                 ] %}
                 {% for item in faq %}
-                <div class="bg-varya-dark rounded-xl border border-white/5 overflow-hidden">
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden">
                     <button data-accordion-toggle class="w-full flex items-center justify-between p-6 text-left">
-                        <span class="font-heading font-semibold">{{ item.q }}</span>
-                        <svg data-accordion-icon class="w-5 h-5 text-varya-text-secondary flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        <span class="font-heading font-semibold text-vc-text">{{ item.q }}</span>
+                        <svg data-accordion-icon class="w-5 h-5 text-vc-text-muted flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                     </button>
-                    <div class="hidden px-6 pb-6 text-varya-text-secondary">{{ item.a }}</div>
+                    <div class="hidden px-6 pb-6 text-vc-text-light">{{ item.a }}</div>
                 </div>
                 {% endfor %}
             </div>
@@ -320,9 +100,4 @@
     </section>
 
 </div>
-{% endblock %}
-
-{% block javascripts %}
-    {{ parent() }}
-    <script src="{{ asset('build/devis-form.js') }}"></script>
 {% endblock %}

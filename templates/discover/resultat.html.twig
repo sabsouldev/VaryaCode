@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Votre plan recommandé — VaryaCode{% endblock %}
+
+{% block body %}
+<div class="pt-16">
+    <section class="py-20 bg-vc-bg min-h-[80vh] flex items-center">
+        <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center">
+
+            <div class="w-16 h-16 rounded-2xl bg-vc-mint/10 flex items-center justify-center mx-auto mb-6" data-animate>
+                <svg class="w-8 h-8 text-vc-mint" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+
+            <h1 class="font-heading text-3xl sm:text-4xl font-bold text-vc-text mb-4" data-animate>
+                D'après vos réponses, le plan<br>
+                <span class="text-vc-blue">{{ plan.name }}</span> est fait pour vous.
+            </h1>
+
+            {% if plan.price > 0 %}
+            {# Plan abonnement #}
+            <div class="card-v2 text-left mt-10 !p-8" data-animate data-animate-delay="100">
+                <div class="flex items-center justify-between mb-4">
+                    <div>
+                        <h2 class="font-heading text-2xl font-bold text-vc-text">{{ plan.name }}</h2>
+                        <p class="text-vc-text-muted">{{ plan.tagline }}</p>
+                    </div>
+                    <p class="font-heading text-4xl font-bold text-vc-blue">{{ plan.price }}€<span class="text-base font-medium text-vc-text-muted">/mois</span></p>
+                </div>
+
+                <div class="border-t border-slate-200 pt-6 mt-6 space-y-4">
+                    <a href="{{ plan.stripe_engagement }}" class="btn-primary text-center w-full block !py-3">
+                        Démarrer avec {{ plan.name }} — {{ plan.price }}€/mois
+                    </a>
+                    <p class="text-center text-vc-text-muted text-sm">Engagement 12 mois · ou {{ plan.price + 10 }}€/mois sans engagement</p>
+                </div>
+            </div>
+
+            {% else %}
+            {# One-shot #}
+            <div class="card-v2 text-left mt-10 !p-8" data-animate data-animate-delay="100">
+                <h2 class="font-heading text-2xl font-bold text-vc-text mb-2">{{ plan.name }}</h2>
+                <p class="text-vc-text-light mb-6">
+                    Votre projet sera réalisé sur devis, avec un paiement unique entre 800 et 2 500 €. Je vous contacte pour en discuter.
+                </p>
+                <a href="{{ path('app_contact') }}" class="btn-primary text-center w-full block !py-3">
+                    Demander un devis gratuit
+                </a>
+            </div>
+            {% endif %}
+
+            <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center" data-animate data-animate-delay="200">
+                <a href="{{ path('app_offers') }}" class="text-vc-blue hover:text-vc-blue-royal font-medium transition-colors">Voir tous les plans</a>
+                <span class="text-slate-300 hidden sm:inline">·</span>
+                <a href="{{ path('app_contact') }}" class="text-vc-text-muted hover:text-vc-text font-medium transition-colors">Je préfère en discuter d'abord</a>
+            </div>
+
+        </div>
+    </section>
+</div>
+{% endblock %}

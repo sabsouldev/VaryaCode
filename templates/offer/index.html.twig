@@ -1,150 +1,154 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Offres & Services — VaryaCode{% endblock %}
-{% block meta_description %}Découvrez les offres VaryaCode : landing page dès 150 €, site vitrine, site association, application Symfony sur mesure.{% endblock %}
+{% block title %}Offres — VaryaCode{% endblock %}
+{% block meta_description %}Découvrez les offres VaryaCode : sites vitrines dès 35 €/mois. Vitrine, Pilote Automatique ou Décollage — trouvez la formule adaptée à votre activité.{% endblock %}
 
 {% block body %}
 <div class="pt-16">
 
-    {# ===== INTRODUCTION ===== #}
-    <section class="py-20">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="font-heading text-4xl sm:text-5xl font-bold mb-6" data-animate>Des offres pensées pour vous</h1>
-            <p class="text-varya-text-secondary text-lg leading-relaxed" data-animate data-animate-delay="100">
-                Chaque projet est différent — et c'est normal. Que vous ayez besoin d'une simple page pour démarrer ou d'un outil complet sur mesure, il y a une formule adaptée à votre situation.
-            </p>
-            <p class="text-varya-text-secondary text-lg mt-4" data-animate data-animate-delay="200">
-                Pas de surprise&nbsp;: des tarifs clairs, un périmètre défini, et toujours la possibilité de faire évoluer votre site avec votre activité.
+    {# ===== HEADER ===== #}
+    <section class="py-16 bg-vc-bg">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="font-heading text-4xl sm:text-5xl font-bold text-vc-text mb-6" data-animate>
+                Des offres claires, sans surprise
+            </h1>
+            <p class="text-vc-text-light text-lg" data-animate data-animate-delay="100">
+                Choisissez la formule adaptée à votre activité. Engagement 12 mois ou sans engagement (+10&nbsp;€/mois).
             </p>
         </div>
     </section>
 
-    {# ===== 4 OFFRES ===== #}
-    <section class="py-10 bg-varya-darker">
+    {# ===== 3 PLANS ABONNEMENT ===== #}
+    <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-
-                {# Landing Page Express #}
-                <div class="card-hover bg-varya-dark rounded-xl p-8 border border-varya-green/20 relative overflow-hidden" data-animate>
-                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-varya-green to-varya-green/50"></div>
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-4 h-4 rounded-full bg-varya-green"></div>
-                        <h3 class="font-heading text-2xl font-bold">Landing Page Express</h3>
-                    </div>
-                    <p class="text-varya-green font-heading font-bold text-3xl mb-2">150&nbsp;€</p>
-                    <p class="text-varya-text-secondary italic mb-6">Votre première présence en ligne, en quelques jours.</p>
-                    <p class="text-varya-text-secondary mb-6">Une page web unique, professionnelle et responsive. Idéale pour tester une activité, annoncer un événement ou simplement exister en ligne avec quelque chose de propre.</p>
-                    <h4 class="font-heading font-semibold mb-3">Ce qui est inclus&nbsp;:</h4>
-                    <ul class="space-y-2 text-varya-text-secondary mb-6">
-                        <li class="flex items-start gap-2"><span class="text-varya-green mt-1">&#10003;</span> 1 page HTML/CSS statique, design soigné</li>
-                        <li class="flex items-start gap-2"><span class="text-varya-green mt-1">&#10003;</span> Responsive mobile et desktop</li>
-                        <li class="flex items-start gap-2"><span class="text-varya-green mt-1">&#10003;</span> Sections : accroche, présentation, contact</li>
-                        <li class="flex items-start gap-2"><span class="text-varya-green mt-1">&#10003;</span> Livraison en 3 à 5 jours</li>
-                        <li class="flex items-start gap-2"><span class="text-varya-green mt-1">&#10003;</span> 1 révision incluse</li>
-                    </ul>
-                    <p class="text-sm text-varya-text-secondary italic">Idéal si vous êtes&nbsp;: auto-entrepreneur qui démarre, micro-association, organisateur d'événement ponctuel.</p>
-                </div>
-
-                {# Site Vitrine Essentiel #}
-                <div class="card-hover bg-varya-dark rounded-xl p-8 border border-varya-blue-sky/20 relative overflow-hidden" data-animate data-animate-delay="100">
-                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-varya-blue-sky to-varya-blue-sky/50"></div>
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-4 h-4 rounded-full bg-varya-blue-sky"></div>
-                        <h3 class="font-heading text-2xl font-bold">Site Vitrine Essentiel</h3>
-                    </div>
-                    <p class="text-varya-blue-sky font-heading font-bold text-3xl mb-2">à partir de 600&nbsp;€</p>
-                    <p class="text-varya-text-secondary italic mb-6">Un vrai site, que vous pouvez faire vivre vous-même.</p>
-                    <p class="text-varya-text-secondary mb-6">Plusieurs pages, un CMS simple pour modifier vos textes en autonomie, et un formulaire de contact fonctionnel. Le tout optimisé pour être trouvé sur Google.</p>
-                    <h4 class="font-heading font-semibold mb-3">Ce qui est inclus&nbsp;:</h4>
-                    <ul class="space-y-2 text-varya-text-secondary mb-6">
-                        <li class="flex items-start gap-2"><span class="text-varya-blue-sky mt-1">&#10003;</span> 3 à 5 pages avec CMS</li>
-                        <li class="flex items-start gap-2"><span class="text-varya-blue-sky mt-1">&#10003;</span> Modification des textes en autonomie</li>
-                        <li class="flex items-start gap-2"><span class="text-varya-blue-sky mt-1">&#10003;</span> Formulaire de contact fonctionnel</li>
-                        <li class="flex items-start gap-2"><span class="text-varya-blue-sky mt-1">&#10003;</span> Référencement de base (SEO) et responsive</li>
-                        <li class="flex items-start gap-2"><span class="text-varya-blue-sky mt-1">&#10003;</span> Livraison en 2 à 3 semaines</li>
-                    </ul>
-                    <p class="text-sm text-varya-text-secondary italic">Idéal si vous êtes&nbsp;: artisan, thérapeute, praticien bien-être, indépendant avec activité établie.</p>
-                </div>
-
-                {# Site Association #}
-                <div class="card-hover bg-varya-dark rounded-xl p-8 border border-purple-500/20 relative overflow-hidden" data-animate data-animate-delay="200">
-                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-purple-500/50"></div>
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-4 h-4 rounded-full bg-purple-500"></div>
-                        <h3 class="font-heading text-2xl font-bold">Site Association / Structuré</h3>
-                    </div>
-                    <p class="text-purple-400 font-heading font-bold text-3xl mb-2">à partir de 1&nbsp;200&nbsp;€</p>
-                    <p class="text-varya-text-secondary italic mb-6">Un site complet pour une structure qui vit et communique.</p>
-                    <p class="text-varya-text-secondary mb-6">Pensé pour les associations et collectifs qui ont besoin de plus qu'une vitrine&nbsp;: actualités, adhésions, événements. Avec une formation incluse pour que vous soyez autonomes.</p>
-                    <h4 class="font-heading font-semibold mb-3">Ce qui est inclus&nbsp;:</h4>
-                    <ul class="space-y-2 text-varya-text-secondary mb-6">
-                        <li class="flex items-start gap-2"><span class="text-purple-400 mt-1">&#10003;</span> 6 à 10 pages</li>
-                        <li class="flex items-start gap-2"><span class="text-purple-400 mt-1">&#10003;</span> Espace actualités / blog</li>
-                        <li class="flex items-start gap-2"><span class="text-purple-400 mt-1">&#10003;</span> Formulaire d'adhésion ou d'inscription</li>
-                        <li class="flex items-start gap-2"><span class="text-purple-400 mt-1">&#10003;</span> Formation incluse pour la prise en main</li>
-                        <li class="flex items-start gap-2"><span class="text-purple-400 mt-1">&#10003;</span> Livraison en 3 à 5 semaines</li>
-                    </ul>
-                    <p class="text-sm text-varya-text-secondary italic">Idéal si vous êtes&nbsp;: association loi 1901, collectif local, structure culturelle ou sociale.</p>
-                </div>
-
-                {# Application Symfony #}
-                <div class="card-hover bg-varya-dark rounded-xl p-8 border border-varya-blue/20 relative overflow-hidden" data-animate data-animate-delay="300">
-                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-varya-blue to-varya-blue/50"></div>
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-4 h-4 rounded-full bg-varya-blue"></div>
-                        <h3 class="font-heading text-2xl font-bold">Application Web Symfony</h3>
-                    </div>
-                    <p class="text-varya-blue font-heading font-bold text-3xl mb-2">sur devis <span class="text-lg font-normal text-varya-text-secondary">(à partir de 2&nbsp;500&nbsp;€)</span></p>
-                    <p class="text-varya-text-secondary italic mb-6">Quand votre besoin dépasse un simple site.</p>
-                    <p class="text-varya-text-secondary mb-6">Vous avez besoin de gérer des données, d'automatiser un processus, de créer un espace membre ou un outil interne&nbsp;? C'est ici que le développement sur mesure prend tout son sens.</p>
-                    <h4 class="font-heading font-semibold mb-3">Ce qui est inclus&nbsp;:</h4>
-                    <ul class="space-y-2 text-varya-text-secondary mb-6">
-                        <li class="flex items-start gap-2"><span class="text-varya-blue mt-1">&#10003;</span> Architecture backend Symfony, propre et évolutive</li>
-                        <li class="flex items-start gap-2"><span class="text-varya-blue mt-1">&#10003;</span> Logique métier adaptée à votre fonctionnement</li>
-                        <li class="flex items-start gap-2"><span class="text-varya-blue mt-1">&#10003;</span> Base de données, authentification, API si nécessaire</li>
-                        <li class="flex items-start gap-2"><span class="text-varya-blue mt-1">&#10003;</span> Devis personnalisé après échange</li>
-                    </ul>
-                    <p class="text-sm text-varya-text-secondary italic">Idéal si vous êtes&nbsp;: structure avec besoin spécifique (gestion de stocks, prise de rdv, suivi d'activité…).</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    {# ===== MAINTENANCE ===== #}
-    <section class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="font-heading text-3xl sm:text-4xl font-bold text-center mb-6" data-animate>Et après la livraison&nbsp;?</h2>
-            <p class="text-varya-text-secondary text-center max-w-2xl mx-auto mb-12" data-animate data-animate-delay="100">
-                Un site, ça vit. Mises à jour de sécurité, petites modifications, évolutions&nbsp;: je propose trois formules d'accompagnement pour que votre site reste fiable dans le temps.
-            </p>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-varya-darker rounded-xl p-8 border border-white/5 text-center" data-animate data-animate-delay="100">
-                    <h3 class="font-heading text-xl font-bold mb-2">Sécurité</h3>
-                    <p class="text-varya-green font-heading font-bold text-2xl mb-4">49&nbsp;€<span class="text-sm font-normal text-varya-text-secondary">/mois</span></p>
-                    <p class="text-varya-text-secondary text-sm">Mises à jour, sauvegardes, monitoring. L'essentiel pour dormir tranquille.</p>
+
+                {# Vitrine #}
+                <div class="card-v2 flex flex-col" data-animate data-animate-delay="100">
+                    <div class="mb-6">
+                        <h2 class="font-heading text-2xl font-bold text-vc-text">Vitrine</h2>
+                        <p class="text-vc-text-muted mt-1">On vous met en ligne</p>
+                    </div>
+                    <p class="font-heading text-5xl font-bold text-vc-blue">35€<span class="text-xl font-medium text-vc-text-muted">/mois</span></p>
+                    <p class="text-sm text-vc-text-muted mt-1">ou 45 €/mois sans engagement</p>
+
+                    <ul class="mt-8 space-y-4 text-vc-text-light flex-grow">
+                        <li class="flex items-start gap-3"><svg class="w-5 h-5 text-vc-mint flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Site vitrine professionnel (3-5 pages)</li>
+                        <li class="flex items-start gap-3"><svg class="w-5 h-5 text-vc-mint flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Design responsive (mobile, tablette, PC)</li>
+                        <li class="flex items-start gap-3"><svg class="w-5 h-5 text-vc-mint flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Hébergement et nom de domaine inclus</li>
+                        <li class="flex items-start gap-3"><svg class="w-5 h-5 text-vc-mint flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Maintenance et mises à jour</li>
+                        <li class="flex items-start gap-3"><svg class="w-5 h-5 text-vc-mint flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Optimisation Google (SEO de base)</li>
+                        <li class="flex items-start gap-3"><svg class="w-5 h-5 text-vc-mint flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Formulaire de contact</li>
+                        <li class="flex items-start gap-3"><svg class="w-5 h-5 text-vc-mint flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Certificat SSL (https)</li>
+                    </ul>
+
+                    <div class="mt-8 space-y-3">
+                        <a href="#" class="btn-secondary text-center w-full block !py-3">Choisir Vitrine — 35€/mois</a>
+                    </div>
                 </div>
-                <div class="bg-varya-darker rounded-xl p-8 border border-varya-green/20 text-center relative" data-animate data-animate-delay="200">
-                    <h3 class="font-heading text-xl font-bold mb-2">Sérénité</h3>
-                    <p class="text-varya-green font-heading font-bold text-2xl mb-4">89&nbsp;€<span class="text-sm font-normal text-varya-text-secondary">/mois</span></p>
-                    <p class="text-varya-text-secondary text-sm">Tout ce qui précède + 1h de modifications par mois + rapport mensuel.</p>
+
+                {# Pilote Automatique — RECOMMANDÉ #}
+                <div class="card-v2 flex flex-col relative border-vc-blue border-2" data-animate data-animate-delay="200">
+                    <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-vc-blue text-white text-xs font-heading font-semibold px-4 py-1 rounded-full">RECOMMANDÉ</span>
+                    <div class="mb-6">
+                        <h2 class="font-heading text-2xl font-bold text-vc-text">Pilote Automatique</h2>
+                        <p class="text-vc-text-muted mt-1">Vos clients réservent en ligne</p>
+                    </div>
+                    <p class="font-heading text-5xl font-bold text-vc-blue">55€<span class="text-xl font-medium text-vc-text-muted">/mois</span></p>
+                    <p class="text-sm text-vc-text-muted mt-1">ou 65 €/mois sans engagement</p>
+
+                    <ul class="mt-8 space-y-4 text-vc-text-light flex-grow">
+                        <li class="flex items-start gap-3"><svg class="w-5 h-5 text-vc-mint flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><strong class="text-vc-text">Tout ce qui est dans Vitrine</strong></li>
+                        <li class="flex items-start gap-3"><svg class="w-5 h-5 text-vc-mint flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Système de réservation en ligne</li>
+                        <li class="flex items-start gap-3"><svg class="w-5 h-5 text-vc-mint flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Intégration avis clients (Google / collectés)</li>
+                        <li class="flex items-start gap-3"><svg class="w-5 h-5 text-vc-mint flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Formulaire avancé (multi-étapes, fichier joint)</li>
+                        <li class="flex items-start gap-3"><svg class="w-5 h-5 text-vc-mint flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Carte interactive (Google Maps)</li>
+                        <li class="flex items-start gap-3"><svg class="w-5 h-5 text-vc-mint flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Galerie photo</li>
+                    </ul>
+
+                    <div class="mt-8 space-y-3">
+                        <a href="#" class="btn-primary text-center w-full block !py-3">Choisir Pilote Auto — 55€/mois</a>
+                    </div>
                 </div>
-                <div class="bg-varya-darker rounded-xl p-8 border border-white/5 text-center" data-animate data-animate-delay="300">
-                    <h3 class="font-heading text-xl font-bold mb-2">Partenaire</h3>
-                    <p class="text-varya-green font-heading font-bold text-2xl mb-4">149&nbsp;€<span class="text-sm font-normal text-varya-text-secondary">/mois</span></p>
-                    <p class="text-varya-text-secondary text-sm">Tout ce qui précède + 3h de modifications + intervention prioritaire. Pour ceux qui veulent un vrai binôme technique.</p>
+
+                {# Décollage #}
+                <div class="card-v2 flex flex-col" data-animate data-animate-delay="300">
+                    <div class="mb-6">
+                        <h2 class="font-heading text-2xl font-bold text-vc-text">Décollage</h2>
+                        <p class="text-vc-text-muted mt-1">Votre site travaille pour vous</p>
+                    </div>
+                    <p class="font-heading text-5xl font-bold text-vc-blue">75€<span class="text-xl font-medium text-vc-text-muted">/mois</span></p>
+                    <p class="text-sm text-vc-text-muted mt-1">ou 85 €/mois sans engagement</p>
+
+                    <ul class="mt-8 space-y-4 text-vc-text-light flex-grow">
+                        <li class="flex items-start gap-3"><svg class="w-5 h-5 text-vc-mint flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><strong class="text-vc-text">Tout ce qui est dans Pilote Auto</strong></li>
+                        <li class="flex items-start gap-3"><svg class="w-5 h-5 text-vc-mint flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Blog / espace actualités</li>
+                        <li class="flex items-start gap-3"><svg class="w-5 h-5 text-vc-mint flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Programme de fidélisation clients</li>
+                        <li class="flex items-start gap-3"><svg class="w-5 h-5 text-vc-mint flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Modifications de contenu incluses (1h/mois)</li>
+                        <li class="flex items-start gap-3"><svg class="w-5 h-5 text-vc-mint flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Rapport mensuel de performance</li>
+                        <li class="flex items-start gap-3"><svg class="w-5 h-5 text-vc-mint flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Support prioritaire</li>
+                    </ul>
+
+                    <div class="mt-8 space-y-3">
+                        <a href="#" class="btn-secondary text-center w-full block !py-3">Choisir Décollage — 75€/mois</a>
+                    </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    {# ===== ONE-SHOT + MAINTENANCE ===== #}
+    <section class="py-16 bg-vc-bg">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                {# One-shot #}
+                <div class="card-v2" data-animate>
+                    <h3 class="font-heading text-xl font-bold text-vc-text mb-2">Projet sur devis (one-shot)</h3>
+                    <p class="text-vc-text-muted text-sm mb-4">Pour ceux qui préfèrent payer en une fois</p>
+                    <p class="font-heading text-3xl font-bold text-vc-text mb-4">800 — 2&nbsp;500€</p>
+                    <p class="text-vc-text-light mb-6">
+                        Vous recevez votre site clé en main avec le code source. Idéal si vous avez votre propre hébergement ou si vous préférez un paiement unique.
+                    </p>
+                    <a href="{{ path('app_contact') }}" class="text-vc-blue hover:text-vc-blue-royal font-medium transition-colors">Demander un devis &rarr;</a>
+                </div>
+
+                {# Maintenance #}
+                <div class="card-v2" data-animate data-animate-delay="100">
+                    <h3 class="font-heading text-xl font-bold text-vc-text mb-2">Maintenance essentielle</h3>
+                    <p class="text-vc-text-muted text-sm mb-4">Pour les clients one-shot</p>
+                    <p class="font-heading text-3xl font-bold text-vc-text mb-1">19€<span class="text-lg font-medium text-vc-text-muted">/mois</span></p>
+                    <ul class="mt-4 space-y-3 text-sm text-vc-text-light mb-6">
+                        <li class="flex items-start gap-2"><svg class="w-5 h-5 text-vc-mint flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Mises à jour de sécurité</li>
+                        <li class="flex items-start gap-2"><svg class="w-5 h-5 text-vc-mint flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Sauvegardes régulières</li>
+                        <li class="flex items-start gap-2"><svg class="w-5 h-5 text-vc-mint flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Monitoring et disponibilité</li>
+                        <li class="flex items-start gap-2"><svg class="w-5 h-5 text-vc-mint flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Support par email</li>
+                    </ul>
+                    <a href="{{ path('app_contact') }}" class="text-vc-blue hover:text-vc-blue-royal font-medium transition-colors">Me contacter &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {# ===== GARANTIE ===== #}
+    <section class="py-16 bg-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-animate>
+            <div class="w-16 h-16 rounded-2xl bg-vc-mint/10 flex items-center justify-center mx-auto mb-6">
+                <svg class="w-8 h-8 text-vc-mint" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </div>
+            <h2 class="font-heading text-2xl font-bold text-vc-text mb-4">Votre site vous appartient</h2>
+            <p class="text-vc-text-light text-lg">
+                Si vous arrêtez votre abonnement, je vous transmets l'intégralité du code source, des contenus et des accès. Vous repartez avec tout, sans frais supplémentaires.
+            </p>
         </div>
     </section>
 
     {# ===== CTA ===== #}
-    <section class="py-20 bg-varya-darker">
+    <section class="py-16 bg-vc-dark">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-animate>
-            <h2 class="font-heading text-3xl sm:text-4xl font-bold mb-6">Pas sûr(e) de ce qu'il vous faut&nbsp;?</h2>
-            <p class="text-varya-text-secondary text-lg mb-10">
-                C'est normal — et c'est pour ça que j'ai créé un petit questionnaire. En quelques questions, il vous oriente vers l'offre la plus adaptée à votre situation. Aucun engagement, juste de la clarté.
-            </p>
-            <a href="{{ path('app_contact') }}#devis" class="btn-primary">Répondre au questionnaire (2 minutes)</a>
+            <h2 class="font-heading text-3xl font-bold text-white mb-4">Vous ne savez pas quel plan choisir&nbsp;?</h2>
+            <p class="text-slate-300 mb-8">Répondez à 4 questions simples et je vous recommande la formule adaptée à votre activité.</p>
+            <a href="{{ path('app_decouvrir') }}" class="btn-primary">Quel plan pour moi&nbsp;? &rarr;</a>
         </div>
     </section>
 

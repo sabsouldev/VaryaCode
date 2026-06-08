@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bienvenue chez VaryaCode !{% endblock %}
+
+{% block body %}
+<div class="pt-16">
+    <section class="py-20 bg-vc-bg min-h-[80vh] flex items-center">
+        <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center">
+
+            <div class="w-20 h-20 rounded-full bg-vc-mint/10 flex items-center justify-center mx-auto mb-8" data-animate>
+                <svg class="w-10 h-10 text-vc-mint" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            </div>
+
+            <h1 class="font-heading text-3xl sm:text-4xl font-bold text-vc-text mb-6" data-animate data-animate-delay="100">
+                Bienvenue chez VaryaCode !
+            </h1>
+
+            <p class="text-vc-text-light text-lg mb-4" data-animate data-animate-delay="200">
+                Votre abonnement est activé. Je vous contacte sous 24h pour démarrer votre projet.
+            </p>
+
+            <p class="text-vc-text-muted mb-10" data-animate data-animate-delay="300">
+                Vérifiez votre email pour la confirmation de paiement.
+            </p>
+
+            <a href="{{ path('app_home') }}" class="btn-secondary" data-animate data-animate-delay="400">Retour à l'accueil</a>
+
+        </div>
+    </section>
+</div>
+{% endblock %}
