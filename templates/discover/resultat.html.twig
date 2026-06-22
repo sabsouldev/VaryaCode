@@ -31,7 +31,12 @@
                     <a href="{{ plan.stripe_engagement }}" class="btn-primary text-center w-full block !py-3">
                         Démarrer avec {{ plan.name }} — {{ plan.price }}€/mois
                     </a>
-                    <p class="text-center text-vc-text-muted text-sm">Engagement 12 mois · ou {{ plan.price + 10 }}€/mois sans engagement</p>
+                    <p class="text-center text-vc-text-muted text-sm">Engagement 12 mois</p>
+
+                    <a href="{{ plan.stripe_libre }}" class="btn-secondary text-center w-full block !py-3">
+                        Sans engagement — {{ plan.price_libre }}€/mois
+                    </a>
+                    <p class="text-center text-vc-text-muted text-sm">Résiliable à tout moment · 30 jours de préavis</p>
                 </div>
             </div>
 

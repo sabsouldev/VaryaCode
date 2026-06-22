@@ -140,30 +140,79 @@
         </div>
     </section>
 
-    {# ===== SECTION 5 — PORTFOLIO LUSgem (fond blanc avec accent) ===== #}
+    {# ===== SECTION 5 — PORTFOLIO CARROUSEL (fond blanc) ===== #}
     <section class="py-20 bg-white">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="font-heading text-3xl sm:text-4xl font-bold text-center mb-12 text-vc-text" data-animate>
-                Un projet, un exemple concret
+                Des projets concrets, livrés et en ligne
             </h2>
-            <div class="card-v2 !p-0 overflow-hidden" data-animate data-animate-delay="100">
-                <div class="grid grid-cols-1 lg:grid-cols-2">
-                    <div class="aspect-video lg:aspect-auto bg-slate-100 overflow-hidden">
-                        <img src="{{ asset('img/home-lusgem.png') }}" alt="Capture d'écran du site Les Univers Singuliers" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-8 lg:p-10 flex flex-col justify-center">
-                        <span class="inline-block w-fit px-3 py-1 rounded-full bg-vc-blue/10 text-vc-blue text-xs font-semibold mb-4">Projet client</span>
-                        <h3 class="font-heading text-2xl font-bold mb-4 text-vc-text">Les Univers Singuliers (LUSgem)</h3>
-                        <p class="text-vc-text-light mb-4">
-                            Site complet pour une structure associative locale en Dordogne. Présentation de l'activité, interface d'administration pour gérer les contenus, design sobre et professionnel.
-                        </p>
-                        <p class="text-vc-text-light mb-6">
-                            Un projet livré clé en main, fonctionnel et pensé pour durer.
-                        </p>
-                        <div class="bg-slate-50 rounded-xl p-4 border border-slate-100">
-                            <p class="text-vc-text-muted text-sm italic">"Témoignage à venir"</p>
+            <div class="relative" data-animate data-animate-delay="100">
+                {# Carousel container #}
+                <div id="portfolio-carousel" class="overflow-hidden rounded-2xl">
+                    <div id="carousel-track" class="flex flex-nowrap w-full transition-transform duration-500 ease-in-out">
+                        {% set projects = [
+                            {
+                                image: 'img/home-lusgem.png',
+                                alt: "Capture d'écran du site Les Univers Singuliers",
+                                tag: 'Projet associatif',
+                                title: 'Les Univers Singuliers (LUSgem)',
+                                desc: "Site complet pour une structure associative locale en Dordogne. Présentation de l'activité, interface d'administration pour gérer les contenus, design sobre et professionnel.",
+                                url: 'https://lusgem.varyacode.fr'
+                            },
+                            {
+                                image: 'img/home-modele-inde.png',
+                                alt: "Capture d'écran du modèle site indépendant",
+                                tag: 'Vitrine',
+                                title: 'Site Indépendant',
+                                desc: "Modèle de site vitrine pensé pour les professionnels indépendants. Design moderne, optimisé mobile, avec formulaire de contact et présentation des services.",
+                                url: 'https://modele-site-inde.varyacode.fr'
+                            },
+                            {
+                                image: 'img/home-varyacode-v1.png',
+                                alt: "Capture d'écran de VaryaCode V1",
+                                tag: 'Portfolio',
+                                title: 'VaryaCode V1',
+                                desc: "La première version du site VaryaCode. Un projet personnel qui a posé les bases de l'identité visuelle et de l'approche orientée petites structures.",
+                                url: '#'
+                            }
+                        ] %}
+                        {% for project in projects %}
+                        <div class="w-full flex-shrink-0">
+                            <div class="card-v2 !p-0 overflow-hidden !rounded-2xl">
+                                <div class="grid grid-cols-1 lg:grid-cols-2">
+                                    <div class="aspect-video lg:aspect-auto lg:min-h-[320px] bg-slate-100 overflow-hidden">
+                                        <img src="{{ asset(project.image) }}" alt="{{ project.alt }}" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="p-8 lg:p-10 flex flex-col justify-center">
+                                        <span class="inline-block w-fit px-3 py-1 rounded-full bg-vc-blue/10 text-vc-blue text-xs font-semibold mb-4">{{ project.tag }}</span>
+                                        <h3 class="font-heading text-2xl font-bold mb-4 text-vc-text">{{ project.title }}</h3>
+                                        <p class="text-vc-text-light mb-6">{{ project.desc }}</p>
+                                        {% if project.url != '#' %}
+                                        <a href="{{ project.url }}" target="_blank" rel="noopener" class="text-vc-blue hover:text-vc-blue-royal font-medium transition-colors">
+                                            Voir le site &rarr;
+                                        </a>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                        {% endfor %}
                     </div>
+                </div>
+
+                {# Flèches #}
+                <button id="carousel-prev" aria-label="Projet précédent" class="absolute top-1/2 -translate-y-1/2 -left-4 sm:-left-5 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white border border-slate-200 shadow-md flex items-center justify-center text-vc-text hover:bg-vc-bg transition-colors z-10">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                </button>
+                <button id="carousel-next" aria-label="Projet suivant" class="absolute top-1/2 -translate-y-1/2 -right-4 sm:-right-5 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white border border-slate-200 shadow-md flex items-center justify-center text-vc-text hover:bg-vc-bg transition-colors z-10">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                </button>
+
+                {# Points indicateurs #}
+                <div class="flex justify-center gap-2 mt-6">
+                    {% for project in projects %}
+                    <button data-carousel-dot="{{ loop.index0 }}" aria-label="Aller au projet {{ loop.index }}" class="w-3 h-3 rounded-full transition-colors {{ loop.first ? 'bg-vc-blue' : 'bg-slate-300 hover:bg-slate-400' }}"></button>
+                    {% endfor %}
                 </div>
             </div>
         </div>

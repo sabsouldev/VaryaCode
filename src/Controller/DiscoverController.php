@@ -47,26 +47,29 @@ class DiscoverController extends AbstractController
     private function recommend(array $answers): array
     {
         $plans = [
-            'vitrine' => [
+           'vitrine' => [
                 'name' => 'Vitrine',
                 'price' => 35,
+                'price_libre' => 45,
                 'tagline' => 'On vous met en ligne',
-                'stripe_engagement' => '#', // TODO: Stripe Payment Link
-                'stripe_libre' => '#',
+                'stripe_engagement' => $_ENV['STRIPE_LINK_VITRINE'] ?? '#',
+                'stripe_libre' => $_ENV['STRIPE_LINK_VITRINE_LIBRE'] ?? '#',
             ],
             'pilote' => [
                 'name' => 'Pilote Automatique',
                 'price' => 55,
+                'price_libre' => 65,
                 'tagline' => 'Vos clients réservent en ligne',
-                'stripe_engagement' => '#',
-                'stripe_libre' => '#',
+                'stripe_engagement' => $_ENV['STRIPE_LINK_PILOTE'] ?? '#',
+                'stripe_libre' => $_ENV['STRIPE_LINK_PILOTE_LIBRE'] ?? '#',
             ],
             'decollage' => [
                 'name' => 'Décollage',
                 'price' => 75,
+                'price_libre' => 85,
                 'tagline' => 'Votre site travaille pour vous',
-                'stripe_engagement' => '#',
-                'stripe_libre' => '#',
+                'stripe_engagement' => $_ENV['STRIPE_LINK_DECOLLAGE'] ?? '#',
+                'stripe_libre' => $_ENV['STRIPE_LINK_DECOLLAGE_LIBRE'] ?? '#',
             ],
             'oneshot' => [
                 'name' => 'Projet sur devis',

@@ -43,3 +43,36 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// Portfolio carousel (separate from the main DOMContentLoaded to avoid early return)
+function initCarousel() {
+    const track = document.getElementById('carousel-track');
+    const prevBtn = document.getElementById('carousel-prev');
+    const nextBtn = document.getElementById('carousel-next');
+    const dots = document.querySelectorAll('[data-carousel-dot]');
+
+    if (!track || !prevBtn || !nextBtn || track.dataset.carouselInit) return;
+    track.dataset.carouselInit = 'true';
+
+    let current = 0;
+    const total = track.children.length;
+
+    function goTo(index) {
+        current = (index + total) % total;
+        track.style.transform = `translateX(-${current * 100}%)`;
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('bg-vc-blue', i === current);
+            dot.classList.toggle('bg-slate-300', i !== current);
+            dot.classList.toggle('hover:bg-slate-400', i !== current);
+        });
+    }
+
+    prevBtn.addEventListener('click', () => goTo(current - 1));
+    nextBtn.addEventListener('click', () => goTo(current + 1));
+    dots.forEach((dot) => {
+        dot.addEventListener('click', () => goTo(parseInt(dot.dataset.carouselDot)));
+    });
+}
+
+document.addEventListener('DOMContentLoaded', initCarousel);
+document.addEventListener('turbo:load', initCarousel);

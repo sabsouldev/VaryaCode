@@ -43,7 +43,8 @@
                     </ul>
 
                     <div class="mt-8 space-y-3">
-                        <a href="#" class="btn-secondary text-center w-full block !py-3">Choisir Vitrine — 35€/mois</a>
+                        <a href="{{ stripe_vitrine }}" class="btn-secondary ...">Choisir Vitrine — 35€/mois</a>
+                        <a href="{{ stripe_vitrine_libre }}" class="btn-secondary ...">Sans engagement — 45€/mois</a>
                     </div>
                 </div>
 
@@ -67,7 +68,8 @@
                     </ul>
 
                     <div class="mt-8 space-y-3">
-                        <a href="#" class="btn-primary text-center w-full block !py-3">Choisir Pilote Auto — 55€/mois</a>
+                        <a href="{{ stripe_pilote }}" class="btn-primary ...">Choisir Pilote Auto — 55€/mois</a>
+                        <a href="{{ stripe_pilote_libre }}" class="btn-secondary ...">Sans engagement — 65€/mois</a>
                     </div>
                 </div>
 
@@ -90,7 +92,8 @@
                     </ul>
 
                     <div class="mt-8 space-y-3">
-                        <a href="#" class="btn-secondary text-center w-full block !py-3">Choisir Décollage — 75€/mois</a>
+                        <a href="{{ stripe_decollage }}" class="btn-secondary ...">Choisir Décollage — 75€/mois</a>
+                        <a href="{{ stripe_decollage_libre }}" class="btn-secondary ...">Sans engagement — 85€/mois</a>
                     </div>
                 </div>
             </div>
@@ -124,7 +127,7 @@
                         <li class="flex items-start gap-2"><svg class="w-5 h-5 text-vc-mint flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Monitoring et disponibilité</li>
                         <li class="flex items-start gap-2"><svg class="w-5 h-5 text-vc-mint flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Support par email</li>
                     </ul>
-                    <a href="{{ path('app_contact') }}" class="text-vc-blue hover:text-vc-blue-royal font-medium transition-colors">Me contacter &rarr;</a>
+                    <a href="{{ stripe_maintenance }}" class="text-vc-blue ...">S'abonner — 19€/mois →</a>
                 </div>
             </div>
         </div>
