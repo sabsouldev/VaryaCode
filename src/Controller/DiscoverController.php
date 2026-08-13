@@ -49,24 +49,24 @@ class DiscoverController extends AbstractController
         $plans = [
            'vitrine' => [
                 'name' => 'Vitrine',
-                'price' => 35,
-                'price_libre' => 45,
+                'price' => 49,
+                'price_libre' => 59,
                 'tagline' => 'On vous met en ligne',
                 'stripe_engagement' => $_ENV['STRIPE_LINK_VITRINE'] ?? '#',
                 'stripe_libre' => $_ENV['STRIPE_LINK_VITRINE_LIBRE'] ?? '#',
             ],
             'pilote' => [
                 'name' => 'Pilote Automatique',
-                'price' => 55,
-                'price_libre' => 65,
+                'price' => 79,
+                'price_libre' => 89,
                 'tagline' => 'Vos clients réservent en ligne',
                 'stripe_engagement' => $_ENV['STRIPE_LINK_PILOTE'] ?? '#',
                 'stripe_libre' => $_ENV['STRIPE_LINK_PILOTE_LIBRE'] ?? '#',
             ],
             'decollage' => [
                 'name' => 'Décollage',
-                'price' => 75,
-                'price_libre' => 85,
+                'price' => 109,
+                'price_libre' => 119,
                 'tagline' => 'Votre site travaille pour vous',
                 'stripe_engagement' => $_ENV['STRIPE_LINK_DECOLLAGE'] ?? '#',
                 'stripe_libre' => $_ENV['STRIPE_LINK_DECOLLAGE_LIBRE'] ?? '#',
@@ -91,13 +91,13 @@ class DiscoverController extends AbstractController
             return $plans['oneshot'];
         }
 
-        // Budget > 60€ OR needs include blog/fidélité → Décollage
-        if ($budget === 'plus60' || array_intersect(['blog', 'fidelisation'], $needs)) {
+        // Budget > 90€ OR needs include blog/fidélité → Décollage
+        if ($budget === 'plus90' || array_intersect(['blog', 'fidelisation'], $needs)) {
             return $plans['decollage'];
         }
 
-        // Budget 40-60€ OR needs include reservation/avis → Pilote Automatique
-        if ($budget === '40-60' || array_intersect(['reservation', 'avis'], $needs)) {
+        // Budget 60-90€ OR needs include reservation/avis → Pilote Automatique
+        if ($budget === '60-90' || array_intersect(['reservation', 'avis'], $needs)) {
             return $plans['pilote'];
         }
 
