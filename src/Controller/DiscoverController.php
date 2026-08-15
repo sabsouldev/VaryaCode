@@ -32,7 +32,13 @@ class DiscoverController extends AbstractController
     #[Route('/decouvrir/submit', name: 'app_decouvrir_submit', methods: ['POST'])]
     public function submit(Request $request): Response
     {
+        if (!$this->isCsrfTokenValid('discover_form', $request->request->get('_token'))) {
+            $this->addFlash('error', 'Jeton de sécurité invalide, veuillez réessayer.');
+            return $this->redirectToRoute('app_decouvrir');
+        }
+
         $data = $request->request->all();
+        unset($data['_token']);
         $request->getSession()->set('discover_answers', $data);
 
         return $this->redirectToRoute('app_decouvrir_resultat');

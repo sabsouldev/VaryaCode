@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /admin
+Disallow: /login
+Disallow: /decouvrir/resultat
+Disallow: /merci
 
 Sitemap: https://varyacode.fr/sitemap.xml

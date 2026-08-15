@@ -43,7 +43,9 @@ class ProjectCrudController extends AbstractCrudController
         ->setBasePath('uploads/projects')
         ->setUploadDir('public/uploads/projects')
         ->setUploadedFileNamePattern('[slug]-[timestamp].[extension]')
-        ->setRequired(false);
+        ->setRequired(false)
+        ->mimeTypes('image/jpeg,image/png,image/webp')
+        ->maxSize('5M');
      
     yield TextField::new('technologiesAsString', 'Technologies')
         ->setHelp('Séparées par des virgules (ex: Symfony 7, Twig, MariaDB)');
