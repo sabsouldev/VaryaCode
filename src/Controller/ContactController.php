@@ -37,6 +37,10 @@ class ContactController extends AbstractController
             return new JsonResponse(['success' => false, 'message' => 'Données manquantes.'], 400);
         }
 
+        if (!$this->isCsrfTokenValid('devis_form', $data['_token'] ?? '')) {
+            return new JsonResponse(['success' => false, 'message' => 'Jeton de sécurité invalide.'], 403);
+        }
+
         $suggestedOffer = $suggestionService->suggest($data);
 
         $devis = new DevisRequest();
@@ -93,6 +97,11 @@ class ContactController extends AbstractController
         EntityManagerInterface $em,
         MailerInterface $mailer,
     ): Response {
+        if (!$this->isCsrfTokenValid('contact_form', $request->request->get('_token'))) {
+            $this->addFlash('error', 'Jeton de sécurité invalide, veuillez réessayer.');
+            return $this->redirectToRoute('app_contact');
+        }
+
         $name = $request->request->get('contact_name', '');
         $email = $request->request->get('contact_email', '');
         $subject = $request->request->get('contact_subject', '');

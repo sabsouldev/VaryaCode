@@ -6,6 +6,7 @@
     <title>{% block title %}VaryaCode — Création de site internet en Dordogne{% endblock %}</title>
     <meta name="description" content="{% block meta_description %}Création de site internet en Dordogne. VaryaCode accompagne artisans, associations et indépendants avec des sites vitrines professionnels dès 49 €/mois.{% endblock %}">
     <link rel="canonical" href="{{ app.request.schemeAndHttpHost ~ app.request.pathInfo }}">
+    {% block robots_meta %}{% endblock %}
 
     {# Open Graph #}
     <meta property="og:title" content="{% block og_title %}VaryaCode — Création de site internet en Dordogne{% endblock %}">

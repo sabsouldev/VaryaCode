@@ -95,6 +95,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
+        const csrfMeta = document.querySelector('meta[name="csrf-devis-token"]');
+        if (csrfMeta) {
+            data._token = csrfMeta.content;
+        }
+
         try {
             submitBtn.disabled = true;
             submitBtn.textContent = 'Envoi en cours...';

@@ -20,6 +20,7 @@
             </div>
 
             <form id="discover-form" action="{{ path('app_decouvrir_submit') }}" method="POST">
+                <input type="hidden" name="_token" value="{{ csrf_token('discover_form') }}">
 
                 {# STEP 1 — Qui êtes-vous ? #}
                 <div class="discover-step" data-step="1">
