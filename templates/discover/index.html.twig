@@ -19,7 +19,7 @@
                 </div>
             </div>
 
-            <form id="discover-form" action="{{ path('app_decouvrir_submit') }}" method="POST">
+            <form id="discover-form" action="{{ path('app_decouvrir_submit') }}" method="POST" novalidate>
                 <input type="hidden" name="_token" value="{{ csrf_token('discover_form') }}">
 
                 {# STEP 1 — Qui êtes-vous ? #}
@@ -35,7 +35,7 @@
                         ] %}
                         {% for p in profiles %}
                         <label class="discover-option block cursor-pointer">
-                            <input type="radio" name="profile" value="{{ p.value }}" class="hidden peer" required>
+                            <input type="radio" name="profile" value="{{ p.value }}" class="hidden peer">
                             <div class="card-v2 !p-4 peer-checked:border-vc-blue peer-checked:bg-blue-50 transition-all">
                                 <span class="text-vc-text font-medium">{{ p.label }}</span>
                             </div>
@@ -55,7 +55,7 @@
                         ] %}
                         {% for s in sites %}
                         <label class="discover-option block cursor-pointer">
-                            <input type="radio" name="existing_site" value="{{ s.value }}" class="hidden peer" required>
+                            <input type="radio" name="existing_site" value="{{ s.value }}" class="hidden peer">
                             <div class="card-v2 !p-4 peer-checked:border-vc-blue peer-checked:bg-blue-50 transition-all">
                                 <span class="text-vc-text font-medium">{{ s.label }}</span>
                             </div>
@@ -103,7 +103,7 @@
                         ] %}
                         {% for b in budgets %}
                         <label class="discover-option block cursor-pointer">
-                            <input type="radio" name="budget" value="{{ b.value }}" class="hidden peer" required>
+                            <input type="radio" name="budget" value="{{ b.value }}" class="hidden peer">
                             <div class="card-v2 !p-4 peer-checked:border-vc-blue peer-checked:bg-blue-50 transition-all">
                                 <span class="text-vc-text font-medium">{{ b.label }}</span>
                             </div>

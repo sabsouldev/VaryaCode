@@ -29,6 +29,24 @@ document.addEventListener('DOMContentLoaded', () => {
         progressPct.textContent = pct + '%';
     }
 
+    // Vérifie que l'étape actuellement affichée est valide avant de continuer
+    function validateCurrentStep() {
+        const stepEl = form.querySelector(`.discover-step[data-step="${current}"]`);
+        if (!stepEl) return true;
+
+        const radios = stepEl.querySelectorAll('input[type="radio"]');
+        if (radios.length > 0) {
+            const name = radios[0].name;
+            const checked = stepEl.querySelector(`input[name="${name}"]:checked`);
+            if (!checked) return false;
+        }
+
+        // Si tu veux aussi rendre les checkboxes obligatoires sur une étape donnée,
+        // ajoute une vérification similaire ici.
+
+        return true;
+    }
+
     // Auto-advance on radio selection (steps 1, 2, 4)
     form.querySelectorAll('input[type="radio"]').forEach((radio) => {
         radio.addEventListener('change', () => {
@@ -66,6 +84,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     btnNext.addEventListener('click', () => {
+        if (!validateCurrentStep()) {
+            return; // bloque l'avancée si l'étape n'est pas complète
+        }
         if (current < total) {
             current++;
             updateUI();
@@ -76,6 +97,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (current > 1) {
             current--;
             updateUI();
+        }
+    });
+
+    form.addEventListener('submit', (e) => {
+        if (!validateCurrentStep()) {
+            e.preventDefault();
         }
     });
 
